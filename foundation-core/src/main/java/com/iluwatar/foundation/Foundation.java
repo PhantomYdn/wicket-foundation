@@ -1,4 +1,4 @@
-package com.iluwatar;
+package com.iluwatar.foundation;
 
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
