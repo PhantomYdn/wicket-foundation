@@ -20,6 +20,11 @@
   
   <dependencies>
     <dependency>
+      <groupId>com.iluwatar</groupId>
+      <artifactId>foundation-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.wicket</groupId>
       <artifactId>wicket-core</artifactId>
     </dependency>
