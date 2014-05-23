@@ -7,6 +7,8 @@ import org.apache.wicket.request.resource.ResourceReference;
 public class Foundation {
 
 	private static ResourceReference foundationCssReference;
+
+	private static ResourceReference normalizeCssReference;
 	
 	private static ResourceReference foundationJsReference;
 	
@@ -17,6 +19,13 @@ public class Foundation {
 		return foundationCssReference;
 	}
 
+	public static ResourceReference getNormalizeCssReference() {
+		if (normalizeCssReference == null) {
+			normalizeCssReference = new CssResourceReference(Foundation.class, "normalize.css");
+		}
+		return normalizeCssReference;
+	}
+	
 	public static ResourceReference getFoundationJsReference() {
 		if (foundationJsReference == null) {
 			foundationJsReference = new JavaScriptResourceReference(Foundation.class, "foundation.js");

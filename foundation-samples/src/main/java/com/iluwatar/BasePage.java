@@ -19,6 +19,7 @@ public abstract class BasePage extends WebPage {
 	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
+		response.render(CssHeaderItem.forReference(Foundation.getNormalizeCssReference()));
 		response.render(CssHeaderItem.forReference(Foundation.getFoundationCssReference()));
 		response.render(JavaScriptHeaderItem.forReference(Foundation.getFoundationJsReference()));
 	}
