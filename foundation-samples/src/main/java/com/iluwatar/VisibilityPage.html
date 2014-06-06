@@ -10,28 +10,39 @@
       <h4>HTML</h4>
       
 <pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">&quot;panel&quot;</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-small-only&quot;</span>&gt;</span>This text is shown only on a small screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-medium-up&quot;</span>&gt;</span>This text is shown on medium screens and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-medium-only&quot;</span>&gt;</span>This text is shown only on a medium screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-large-up&quot;</span>&gt;</span>This text is shown on large screens and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-large-only&quot;</span>&gt;</span>This text is shown only on a large screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-xlarge-up&quot;</span>&gt;</span>This text is shown on xlarge screens and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-xlarge-only&quot;</span>&gt;</span>This text is shown only on an xlarge screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-xxlarge-up&quot;</span>&gt;</span>This text is shown on xxlarge screens and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForSmallOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForMediumUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForMediumOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForLargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForLargeOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForXlargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForXlargeOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForXxlargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">p</span>&gt;</span></div></code>
+</pre>
+
+      <h4>Java</h4>
+      
+<pre><code class="language-html"><div class="code-container">
+Label showForSmallOnly = new Label(&quot;showForSmallOnly&quot;, Model.of(&quot;This text is shown only on a small screen.&quot;));
+add(showForSmallOnly);
+showForSmallOnly.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_SMALL_ONLY)));
+...
+</div></code>
 </pre>
 
       <h4>Rendered HTML</h4>
       <p class="panel">
-        <strong class="show-for-small-only">This text is shown only on a small screen.</strong>
-        <strong class="show-for-medium-up">This text is shown on medium screens and up.</strong>
-        <strong class="show-for-medium-only">This text is shown only on a medium screen.</strong>
-        <strong class="show-for-large-up">This text is shown on large screens and up.</strong>
-        <strong class="show-for-large-only">This text is shown only on a large screen.</strong>
-        <strong class="show-for-xlarge-up">This text is shown on xlarge screens and up.</strong>
-        <strong class="show-for-xlarge-only">This text is shown only on an xlarge screen.</strong>
-        <strong class="show-for-xxlarge-up">This text is shown on xxlarge screens and up.</strong>
+        <strong wicket:id="showForSmallOnly"></strong>
+        <strong wicket:id="showForMediumUp"></strong>
+        <strong wicket:id="showForMediumOnly"></strong>
+        <strong wicket:id="showForLargeUp"></strong>
+        <strong wicket:id="showForLargeOnly"></strong>
+        <strong wicket:id="showForXlargeUp"></strong>
+        <strong wicket:id="showForXlargeOnly"></strong>
+        <strong wicket:id="showForXxlargeUp"></strong>
       </p>
+      
       <h3 id="hide-by-screen-size">Hide by Screen Size</h3>
       <p>This example shows the opposite: It uses the <strong>hide</strong> visibility classes to state which elements should disappear based on your device&#39;s screen size or orientation. Users will see elements on every browser <strong>except</strong> those that meet these conditions.</p>
       <h4>HTML</h4>
