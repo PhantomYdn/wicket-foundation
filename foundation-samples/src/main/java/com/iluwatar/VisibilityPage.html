@@ -85,15 +85,26 @@ hideForSmallOnly.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.
       <h4>HTML</h4>
       
 <pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">&quot;panel&quot;</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-landscape&quot;</span>&gt;</span>You are in landscape orientation.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-portrait&quot;</span>&gt;</span>You are in portrait orientation.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForLandscape&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForPortrait&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">p</span>&gt;</span></div></code>
+</pre>
+
+
+      <h4>Java</h4>
+      
+<pre><code class="language-html"><div class="code-container">
+Label showForLandscape = new Label("showForLandscape", Model.of("You are in landscape orientation."));
+add(showForLandscape);
+showForLandscape.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationType.SHOW_FOR_LANDSCAPE)));
+...
+</div></code>
 </pre>
 
       <h4>Rendered HTML</h4>
       <p class="panel">
-      <strong class="show-for-landscape">You are in landscape orientation.</strong>
-      <strong class="show-for-portrait">You are in portrait orientation.</strong>
+      <strong wicket:id="showForLandscape"></strong>
+      <strong wicket:id="showForPortrait"></strong>
       </p>
       <h3 id="touch-detection">Touch Detection</h3>
       <p>There are also visibility classes to hide or show content based on whether a device supports touch (as determined by Modernizr).</p>

@@ -6,6 +6,8 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.iluwatar.foundation.behavior.HideByScreenSizeBehavior;
 import com.iluwatar.foundation.behavior.HideByScreenSizeBehavior.HideByScreenSizeType;
+import com.iluwatar.foundation.behavior.ShowByOrientationBehavior;
+import com.iluwatar.foundation.behavior.ShowByOrientationBehavior.ShowByOrientationType;
 import com.iluwatar.foundation.behavior.ShowByScreenSizeBehavior;
 import com.iluwatar.foundation.behavior.ShowByScreenSizeBehavior.ShowByScreenSizeType;
 
@@ -83,6 +85,16 @@ public class VisibilityPage extends BasePage {
 		Label hideForXxlargeUp = new Label("hideForXxlargeUp", Model.of("You are not on an xxlarge screen."));
 		add(hideForXxlargeUp);
 		hideForXxlargeUp.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_XXLARGE_UP)));
+		
+		// orientation detection
+		
+		Label showForLandscape = new Label("showForLandscape", Model.of("You are in landscape orientation."));
+		add(showForLandscape);
+		showForLandscape.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationType.SHOW_FOR_LANDSCAPE)));
+		
+		Label showForPortrait = new Label("showForPortrait", Model.of("You are in portrait orientation."));
+		add(showForPortrait);
+		showForPortrait.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationType.SHOW_FOR_PORTRAIT)));
 		
 	}
 
