@@ -2,11 +2,11 @@ package com.iluwatar;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-public class HomePage extends BasePage {
+public class IndexPage extends BasePage {
 	
 	private static final long serialVersionUID = 1L;
 
-	public HomePage(final PageParameters parameters) {
+	public IndexPage(final PageParameters parameters) {
 		super(parameters);
     }	
 	
