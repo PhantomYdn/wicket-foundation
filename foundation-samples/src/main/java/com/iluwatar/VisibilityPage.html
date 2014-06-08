@@ -111,15 +111,25 @@ showForLandscape.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationTyp
       <h4>HTML</h4>
       
 <pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">&quot;panel&quot;</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;show-for-touch&quot;</span>&gt;</span>You are on a touch-enabled device.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hide-for-touch&quot;</span>&gt;</span>You are not on a touch-enabled device.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;showForTouch&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hideForTouch&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">p</span>&gt;</span></div></code>
+</pre>
+
+      <h4>Java</h4>
+      
+<pre><code class="language-html"><div class="code-container">
+Label showForTouch = new Label("showForTouch", Model.of("You are on a touch-enabled device."));
+add(showForTouch);
+showForTouch.add(new TouchDetectionBehavior(Model.of(TouchDetectionType.SHOW_FOR_TOUCH)));
+...
+</div></code>
 </pre>
 
       <h4>Rendered HTML</h4>
       <p class="panel">
-      <strong class="show-for-touch">You are on a touch-enabled device.</strong>
-      <strong class="hide-for-touch">You are not on a touch-enabled device.</strong>
+      <strong wicket:id="showForTouch">You are on a touch-enabled device.</strong>
+      <strong wicket:id="hideForTouch">You are not on a touch-enabled device.</strong>
       </p>
       <h3 id="accessibility">Accessibility</h3>
       <p>Finally, if you want to hide some content but still make it accessible for screen readers, use the <strong>hidden</strong> visibility classes. Do not confuse these classes with <strong>hide</strong> visibility classes. Use these classes in conjunction with the <strong>hide</strong> and <strong>show</strong> visibility classes to control complex layouts while offering accessibility for those using screen readers.</p>

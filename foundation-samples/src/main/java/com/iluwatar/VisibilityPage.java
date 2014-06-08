@@ -10,6 +10,8 @@ import com.iluwatar.foundation.behavior.ShowByOrientationBehavior;
 import com.iluwatar.foundation.behavior.ShowByOrientationBehavior.ShowByOrientationType;
 import com.iluwatar.foundation.behavior.ShowByScreenSizeBehavior;
 import com.iluwatar.foundation.behavior.ShowByScreenSizeBehavior.ShowByScreenSizeType;
+import com.iluwatar.foundation.behavior.TouchDetectionBehavior;
+import com.iluwatar.foundation.behavior.TouchDetectionBehavior.TouchDetectionType;
 
 public class VisibilityPage extends BasePage {
 
@@ -95,6 +97,16 @@ public class VisibilityPage extends BasePage {
 		Label showForPortrait = new Label("showForPortrait", Model.of("You are in portrait orientation."));
 		add(showForPortrait);
 		showForPortrait.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationType.SHOW_FOR_PORTRAIT)));
+		
+		// touch detection
+		
+		Label showForTouch = new Label("showForTouch", Model.of("You are on a touch-enabled device."));
+		add(showForTouch);
+		showForTouch.add(new TouchDetectionBehavior(Model.of(TouchDetectionType.SHOW_FOR_TOUCH)));
+		
+		Label hideForTouch = new Label("hideForTouch", Model.of("You are not on a touch-enabled device."));
+		add(hideForTouch);
+		hideForTouch.add(new TouchDetectionBehavior(Model.of(TouchDetectionType.HIDE_FOR_TOUCH)));
 		
 	}
 
