@@ -136,54 +136,73 @@ showForTouch.add(new TouchDetectionBehavior(Model.of(TouchDetectionType.SHOW_FOR
       <h4>HTML</h4>
 
 <pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">&quot;panel&quot;</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hidden-for-small-only&quot;</span>&gt;</span>You are <span class="tag">&lt;<span class="title">em</span>&gt;</span>not<span class="tag">&lt;/<span class="title">em</span>&gt;</span> on a small screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hidden-for-medium-up&quot;</span>&gt;</span>
-    You are <span class="tag">&lt;<span class="title">em</span>&gt;</span>not<span class="tag">&lt;/<span class="title">em</span>&gt;</span> on a medium, large, xlarge, or xxlarge screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hidden-for-medium-only&quot;</span>&gt;</span>You are <span class="tag">&lt;<span class="title">em</span>&gt;</span>not<span class="tag">&lt;/<span class="title">em</span>&gt;</span> on a medium screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hidden-for-large-up&quot;</span>&gt;</span>You are <span class="tag">&lt;<span class="title">em</span>&gt;</span>not<span class="tag">&lt;/<span class="title">em</span>&gt;</span> on a large, xlarge, or xxlarge screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hidden-for-large-only&quot;</span>&gt;</span>You are <span class="tag">&lt;<span class="title">em</span>&gt;</span>not<span class="tag">&lt;/<span class="title">em</span>&gt;</span> on a large screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hidden-for-xlarge-up&quot;</span>&gt;</span>You are <span class="tag">&lt;<span class="title">em</span>&gt;</span>not<span class="tag">&lt;/<span class="title">em</span>&gt;</span> on an xlarge screen and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hidden-for-xlarge-only&quot;</span>&gt;</span>You are <span class="tag">&lt;<span class="title">em</span>&gt;</span>not<span class="tag">&lt;/<span class="title">em</span>&gt;</span> on an xlarge screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;hidden-for-xxlarge-up&quot;</span>&gt;</span>You are <span class="tag">&lt;<span class="title">em</span>&gt;</span>not<span class="tag">&lt;/<span class="title">em</span>&gt;</span> on an xxlarge screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hiddenForSmallOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hiddenForMediumUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hiddenForMediumOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hiddenForLargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hiddenForLargeOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hiddenForXlargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hiddenForXlargeOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;hiddenForXxlargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">p</span>&gt;</span></div></code>
+</pre>
+
+      <h4>Java</h4>
+
+<pre><code class="language-html"><div class="code-container">
+Label hiddenForSmallOnly = new Label("hiddenForSmallOnly", Model.of("You are not on a small screen."));
+add(hiddenForSmallOnly);
+hiddenForSmallOnly.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_SMALL_ONLY)));
+...
+</div></code>
 </pre>
 
       <h4>Rendered HTML</h4>
       <p class="panel">
-      <strong class="hidden-for-small-only">You are <em>not</em> on a small screen.</strong>
-      <strong class="hidden-for-medium-up">You are <em>not</em> on a medium, large, xlarge, or xxlarge screen.</strong>
-      <strong class="hidden-for-medium-only">You are <em>not</em> on a medium screen.</strong>
-      <strong class="hidden-for-large-up">You are <em>not</em> on a large, xlarge, or xxlarge screen.</strong>
-      <strong class="hidden-for-large-only">You are <em>not</em> on a large screen.</strong>
-      <strong class="hidden-for-xlarge-up">You are <em>not</em> on an xlarge screen and up.</strong>
-      <strong class="hidden-for-xlarge-only">You are <em>not</em> on an xlarge screen.</strong>
-      <strong class="hidden-for-xxlarge-up">You are <em>not</em> on an xxlarge screen.</strong>
+      <strong wicket:id="hiddenForSmallOnly"></strong>
+      <strong wicket:id="hiddenForMediumUp"></strong>
+      <strong wicket:id="hiddenForMediumOnly"></strong>
+      <strong wicket:id="hiddenForLargeUp"></strong>
+      <strong wicket:id="hiddenForLargeOnly"></strong>
+      <strong wicket:id="hiddenForXlargeUp"></strong>
+      <strong wicket:id="hiddenForXlargeOnly"></strong>
+      <strong wicket:id="hiddenForXxlargeUp"></strong>
       </p>
       <p>To reverse the rules defined by <strong>hidden</strong>, use the <strong>visible</strong> visibility classes.</p>
       <h4>HTML</h4>
       
 <pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">&quot;panel&quot;</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visible-for-small-only&quot;</span>&gt;</span>This text is shown only on a small screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visible-for-medium-up&quot;</span>&gt;</span>This text is shown on medium screens and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visible-for-medium-only&quot;</span>&gt;</span>This text is shown only on a medium screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visible-for-large-up&quot;</span>&gt;</span>This text is shown on large screens and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visible-for-large-only&quot;</span>&gt;</span>This text is shown only on a large screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visible-for-xlarge-up&quot;</span>&gt;</span>This text is shown on xlarge screens and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visible-for-xlarge-only&quot;</span>&gt;</span>This text is shown only on an xlarge screen.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visible-for-xxlarge-up&quot;</span>&gt;</span>This text is shown on xxlarge screens and up.<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visibleForSmallOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visibleForMediumUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visibleForMediumOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visibleForLargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visibleForLargeOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visibleForXlargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visibleForXlargeOnly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">strong</span> <span class="attribute">class</span>=<span class="value">&quot;visibleForXxlargeUp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
 <span class="tag">&lt;/<span class="title">p</span>&gt;</span></div></code>
+</pre>
+
+      <h4>Java</h4>
+      
+<pre><code class="language-html"><div class="code-container">
+Label visibleForSmallOnly = new Label("visibleForSmallOnly", Model.of("This text is visible only on a small screen."));
+add(visibleForSmallOnly);
+visibleForSmallOnly.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_SMALL_ONLY)));
+...
+</div></code>
 </pre>
 
       <h4>Rendered HTML</h4>
       <p class="panel">
-      <strong class="visible-for-small-only">This text is shown only on a small screen.</strong>
-      <strong class="visible-for-medium-up">This text is shown on medium screens and up.</strong>
-      <strong class="visible-for-medium-only">This text is shown only on a medium screen.</strong>
-      <strong class="visible-for-large-up">This text is shown on large screens and up.</strong>
-      <strong class="visible-for-large-only">This text is shown only on a large screen.</strong>
-      <strong class="visible-for-xlarge-up">This text is shown on xlarge screens and up.</strong>
-      <strong class="visible-for-xlarge-only">This text is shown only on an xlarge screen.</strong>
-      <strong class="visible-for-xxlarge-up">This text is shown on xxlarge screens and up.</strong>
+      <strong wicket:id="visibleForSmallOnly"></strong>
+      <strong wicket:id="visibleForMediumUp"></strong>
+      <strong wicket:id="visibleForMediumOnly"></strong>
+      <strong wicket:id="visibleForLargeUp"></strong>
+      <strong wicket:id="visibleForLargeOnly"></strong>
+      <strong wicket:id="visibleForXlargeUp"></strong>
+      <strong wicket:id="visibleForXlargeOnly"></strong>
+      <strong wicket:id="visibleForXxlargeUp"></strong>
       </p>
       <hr>
     </div>
