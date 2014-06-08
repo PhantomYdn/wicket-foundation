@@ -1,5 +1,6 @@
 package com.iluwatar;
 
+import org.apache.wicket.Application;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
@@ -24,6 +25,7 @@ public abstract class BasePage extends WebPage {
 	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);
+		response.render(JavaScriptHeaderItem.forReference(Application.get().getJavaScriptLibrarySettings().getJQueryReference()));
 		response.render(CssHeaderItem.forReference(Foundation.getNormalizeCssReference()));
 		response.render(CssHeaderItem.forReference(Foundation.getFoundationCssReference()));
 		response.render(JavaScriptHeaderItem.forReference(Foundation.getFoundationJsReference()));
