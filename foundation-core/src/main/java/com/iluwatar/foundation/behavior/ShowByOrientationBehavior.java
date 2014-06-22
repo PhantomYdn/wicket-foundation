@@ -45,5 +45,4 @@ public class ShowByOrientationBehavior extends Behavior {
 		super.detach(component);
 	}
 	
-	
 }
