@@ -16,6 +16,7 @@ import com.iluwatar.foundation.behavior.TouchDetectionBehavior;
 import com.iluwatar.foundation.behavior.TouchDetectionBehavior.TouchDetectionType;
 import com.iluwatar.foundation.behavior.VisibleForScreenSizeBehavior;
 import com.iluwatar.foundation.behavior.VisibleForScreenSizeBehavior.VisibleForScreenSizeType;
+import com.iluwatar.foundation.border.FoundationBorder;
 
 public class VisibilityPage extends BasePage {
 
@@ -26,158 +27,176 @@ public class VisibilityPage extends BasePage {
 		
 		// show by screen size
 		
+		FoundationBorder showByScreenSize = new FoundationBorder("showByScreenSize");
+		add(showByScreenSize);
+		
 		Label showForSmallOnly = new Label("showForSmallOnly", Model.of("This text is shown only on a small screen."));
-		add(showForSmallOnly);
+		showByScreenSize.add(showForSmallOnly);
 		showForSmallOnly.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_SMALL_ONLY)));
 		
 		Label showForMediumUp = new Label("showForMediumUp", Model.of("This text is shown on medium screens and up."));
-		add(showForMediumUp);
+		showByScreenSize.add(showForMediumUp);
 		showForMediumUp.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_MEDIUM_UP)));
 		
 		Label showForMediumOnly = new Label("showForMediumOnly", Model.of("This text is shown only on a medium screen."));
-		add(showForMediumOnly);
+		showByScreenSize.add(showForMediumOnly);
 		showForMediumOnly.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_MEDIUM_ONLY)));
 		
 		Label showForLargeUp = new Label("showForLargeUp", Model.of("This text is shown on large screens and up."));
-		add(showForLargeUp);
+		showByScreenSize.add(showForLargeUp);
 		showForLargeUp.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_LARGE_UP)));
 		
 		Label showForLargeOnly = new Label("showForLargeOnly", Model.of("This text is shown only on a large screen."));
-		add(showForLargeOnly);
+		showByScreenSize.add(showForLargeOnly);
 		showForLargeOnly.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_LARGE_ONLY)));
 		
 		Label showForXlargeUp = new Label("showForXlargeUp", Model.of("This text is shown on xlarge screens and up."));
-		add(showForXlargeUp);
+		showByScreenSize.add(showForXlargeUp);
 		showForXlargeUp.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_XLARGE_UP)));
 		
 		Label showForXlargeOnly = new Label("showForXlargeOnly", Model.of("This text is shown only on an xlarge screen."));
-		add(showForXlargeOnly);
+		showByScreenSize.add(showForXlargeOnly);
 		showForXlargeOnly.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_XLARGE_ONLY)));
 		
 		Label showForXxlargeUp = new Label("showForXxlargeUp", Model.of("This text is shown on xxlarge screens and up."));
-		add(showForXxlargeUp);
+		showByScreenSize.add(showForXxlargeUp);
 		showForXxlargeUp.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_XXLARGE_UP)));
 		
 		// hide by screen size
 		
+		FoundationBorder hideByScreenSize = new FoundationBorder("hideByScreenSize");
+		add(hideByScreenSize);
+		
 		Label hideForSmallOnly = new Label("hideForSmallOnly", Model.of("You are not on a small screen."));
-		add(hideForSmallOnly);
+		hideByScreenSize.add(hideForSmallOnly);
 		hideForSmallOnly.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_SMALL_ONLY)));
 		
 		Label hideForMediumUp = new Label("hideForMediumUp", Model.of("You are not on a medium, large, xlarge, or xxlarge screen."));
-		add(hideForMediumUp);
+		hideByScreenSize.add(hideForMediumUp);
 		hideForMediumUp.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_MEDIUM_UP)));
 		
 		Label hideForMediumOnly = new Label("hideForMediumOnly", Model.of("You are not on a medium screen."));
-		add(hideForMediumOnly);
+		hideByScreenSize.add(hideForMediumOnly);
 		hideForMediumOnly.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_MEDIUM_ONLY)));
 		
 		Label hideForLargeUp = new Label("hideForLargeUp", Model.of("You are not on a large, xlarge, or xxlarge screen."));
-		add(hideForLargeUp);
+		hideByScreenSize.add(hideForLargeUp);
 		hideForLargeUp.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_LARGE_UP)));
 		
 		Label hideForLargeOnly = new Label("hideForLargeOnly", Model.of("You are not on a large screen."));
-		add(hideForLargeOnly);
+		hideByScreenSize.add(hideForLargeOnly);
 		hideForLargeOnly.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_LARGE_ONLY)));
 		
 		Label hideForXlargeUp = new Label("hideForXlargeUp", Model.of("You are not on an xlarge screen and up."));
-		add(hideForXlargeUp);
+		hideByScreenSize.add(hideForXlargeUp);
 		hideForXlargeUp.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_XLARGE_UP)));
 		
 		Label hideForXlargeOnly = new Label("hideForXlargeOnly", Model.of("You are not on an xlarge screen."));
-		add(hideForXlargeOnly);
+		hideByScreenSize.add(hideForXlargeOnly);
 		hideForXlargeOnly.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_XLARGE_ONLY)));
 		
 		Label hideForXxlargeUp = new Label("hideForXxlargeUp", Model.of("You are not on an xxlarge screen."));
-		add(hideForXxlargeUp);
+		hideByScreenSize.add(hideForXxlargeUp);
 		hideForXxlargeUp.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.HIDE_FOR_XXLARGE_UP)));
 		
 		// orientation detection
 		
+		FoundationBorder orientationDetection = new FoundationBorder("orientationDetection");
+		add(orientationDetection);
+		
 		Label showForLandscape = new Label("showForLandscape", Model.of("You are in landscape orientation."));
-		add(showForLandscape);
+		orientationDetection.add(showForLandscape);
 		showForLandscape.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationType.SHOW_FOR_LANDSCAPE)));
 		
 		Label showForPortrait = new Label("showForPortrait", Model.of("You are in portrait orientation."));
-		add(showForPortrait);
+		orientationDetection.add(showForPortrait);
 		showForPortrait.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationType.SHOW_FOR_PORTRAIT)));
 		
 		// touch detection
 		
+		FoundationBorder touchDetection = new FoundationBorder("touchDetection");
+		add(touchDetection);
+		
 		Label showForTouch = new Label("showForTouch", Model.of("You are on a touch-enabled device."));
-		add(showForTouch);
+		touchDetection.add(showForTouch);
 		showForTouch.add(new TouchDetectionBehavior(Model.of(TouchDetectionType.SHOW_FOR_TOUCH)));
 		
 		Label hideForTouch = new Label("hideForTouch", Model.of("You are not on a touch-enabled device."));
-		add(hideForTouch);
+		touchDetection.add(hideForTouch);
 		hideForTouch.add(new TouchDetectionBehavior(Model.of(TouchDetectionType.HIDE_FOR_TOUCH)));
 		
 		// accessibility - hidden by screen size
 		
+		FoundationBorder hiddenFor = new FoundationBorder("hiddenFor");
+		add(hiddenFor);
+		
 		Label hiddenForSmallOnly = new Label("hiddenForSmallOnly", Model.of("You are not on a small screen."));
-		add(hiddenForSmallOnly);
+		hiddenFor.add(hiddenForSmallOnly);
 		hiddenForSmallOnly.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_SMALL_ONLY)));
 		
 		Label hiddenForMediumUp = new Label("hiddenForMediumUp", Model.of("You are not on a medium, large, xlarge, or xxlarge screen."));
-		add(hiddenForMediumUp);
+		hiddenFor.add(hiddenForMediumUp);
 		hiddenForMediumUp.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_MEDIUM_UP)));
 		
 		Label hiddenForMediumOnly = new Label("hiddenForMediumOnly", Model.of("You are not on a medium screen."));
-		add(hiddenForMediumOnly);
+		hiddenFor.add(hiddenForMediumOnly);
 		hiddenForMediumOnly.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_MEDIUM_ONLY)));
 		
 		Label hiddenForLargeUp = new Label("hiddenForLargeUp", Model.of("You are not on a large, xlarge, or xxlarge screen."));
-		add(hiddenForLargeUp);
+		hiddenFor.add(hiddenForLargeUp);
 		hiddenForLargeUp.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_LARGE_UP)));
 		
 		Label hiddenForLargeOnly = new Label("hiddenForLargeOnly", Model.of("You are not on a large screen."));
-		add(hiddenForLargeOnly);
+		hiddenFor.add(hiddenForLargeOnly);
 		hiddenForLargeOnly.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_LARGE_ONLY)));
 		
 		Label hiddenForXlargeUp = new Label("hiddenForXlargeUp", Model.of("You are not on an xlarge screen and up."));
-		add(hiddenForXlargeUp);
+		hiddenFor.add(hiddenForXlargeUp);
 		hiddenForXlargeUp.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_XLARGE_UP)));
 		
 		Label hiddenForXlargeOnly = new Label("hiddenForXlargeOnly", Model.of("You are not on an xlarge screen."));
-		add(hiddenForXlargeOnly);
+		hiddenFor.add(hiddenForXlargeOnly);
 		hiddenForXlargeOnly.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_XLARGE_ONLY)));
 		
 		Label hiddenForXxlargeUp = new Label("hiddenForXxlargeUp", Model.of("You are not on an xxlarge screen."));
-		add(hiddenForXxlargeUp);
+		hiddenFor.add(hiddenForXxlargeUp);
 		hiddenForXxlargeUp.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSizeType.HIDDEN_FOR_XXLARGE_UP)));
 		
 		// accessibility - visible by screen size
 		
+		FoundationBorder visibleFor = new FoundationBorder("visibleFor");
+		add(visibleFor);
+		
 		Label visibleForSmallOnly = new Label("visibleForSmallOnly", Model.of("This text is visible only on a small screen."));
-		add(visibleForSmallOnly);
+		visibleFor.add(visibleForSmallOnly);
 		visibleForSmallOnly.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_SMALL_ONLY)));
 		
 		Label visibleForMediumUp = new Label("visibleForMediumUp", Model.of("This text is visible on medium screens and up."));
-		add(visibleForMediumUp);
+		visibleFor.add(visibleForMediumUp);
 		visibleForMediumUp.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_MEDIUM_UP)));
 		
 		Label visibleForMediumOnly = new Label("visibleForMediumOnly", Model.of("This text is visible only on a medium screen."));
-		add(visibleForMediumOnly);
+		visibleFor.add(visibleForMediumOnly);
 		visibleForMediumOnly.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_MEDIUM_ONLY)));
 		
 		Label visibleForLargeUp = new Label("visibleForLargeUp", Model.of("This text is visible on large screens and up."));
-		add(visibleForLargeUp);
+		visibleFor.add(visibleForLargeUp);
 		visibleForLargeUp.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_LARGE_UP)));
 		
 		Label visibleForLargeOnly = new Label("visibleForLargeOnly", Model.of("This text is visible only on a large screen."));
-		add(visibleForLargeOnly);
+		visibleFor.add(visibleForLargeOnly);
 		visibleForLargeOnly.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_LARGE_ONLY)));
 		
 		Label visibleForXlargeUp = new Label("visibleForXlargeUp", Model.of("This text is visible on xlarge screens and up."));
-		add(visibleForXlargeUp);
+		visibleFor.add(visibleForXlargeUp);
 		visibleForXlargeUp.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_XLARGE_UP)));
 		
 		Label visibleForXlargeOnly = new Label("visibleForXlargeOnly", Model.of("This text is visible only on an xlarge screen."));
-		add(visibleForXlargeOnly);
+		visibleFor.add(visibleForXlargeOnly);
 		visibleForXlargeOnly.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_XLARGE_ONLY)));
 		
 		Label visibleForXxlargeUp = new Label("visibleForXxlargeUp", Model.of("This text is visible on xxlarge screens and up."));
-		add(visibleForXxlargeUp);
+		visibleFor.add(visibleForXxlargeUp);
 		visibleForXxlargeUp.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_XXLARGE_UP)));
 		
 	}
