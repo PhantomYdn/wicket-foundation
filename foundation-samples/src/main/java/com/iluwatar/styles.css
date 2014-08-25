@@ -5,6 +5,19 @@ pre code {
 	color: #333;
 }
 
+pre .tag, pre .tag .title, pre .rules .property, pre .django .tag .keyword {
+	color: #000080;
+	font-weight: normal;
+}
+
+pre .attribute, pre .variable, pre .lisp .body {
+	color: #008080;
+}
+
+pre .string, pre .tag .value, pre .phpdoc, pre .tex .formula {
+	color: #d14;
+}
+
 .row {
 	max-width: 80rem;
 }
