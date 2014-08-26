@@ -1,17 +1,13 @@
 package com.iluwatar.foundation.behavior;
 
 import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.model.IModel;
 
-import com.iluwatar.foundation.Foundation;
 import com.iluwatar.foundation.util.Attribute;
 import com.iluwatar.foundation.util.StringUtil;
 
-public class ShowByScreenSizeBehavior extends Behavior {
+public class ShowByScreenSizeBehavior extends FoundationBaseBehavior {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -38,18 +34,10 @@ public class ShowByScreenSizeBehavior extends Behavior {
 	}
 
 	@Override
-	public void renderHead(Component component, IHeaderResponse response) {
-		super.renderHead(component, response);
-		response.render(CssHeaderItem.forReference(Foundation.getFoundationCssReference()));
-	}
-
-	@Override
 	public void detach(Component component) {
 		if (showTypeModel != null) {
 			showTypeModel.detach();
 		}
 		super.detach(component);
 	}
-	
-	
 }

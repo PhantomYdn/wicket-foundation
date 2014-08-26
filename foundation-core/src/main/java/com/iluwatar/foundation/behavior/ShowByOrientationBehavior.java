@@ -1,17 +1,13 @@
 package com.iluwatar.foundation.behavior;
 
 import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.ComponentTag;
-import org.apache.wicket.markup.head.CssHeaderItem;
-import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.model.IModel;
 
-import com.iluwatar.foundation.Foundation;
 import com.iluwatar.foundation.util.Attribute;
 import com.iluwatar.foundation.util.StringUtil;
 
-public class ShowByOrientationBehavior extends Behavior {
+public class ShowByOrientationBehavior extends FoundationBaseBehavior {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -32,17 +28,10 @@ public class ShowByOrientationBehavior extends Behavior {
 	}
 
 	@Override
-	public void renderHead(Component component, IHeaderResponse response) {
-		super.renderHead(component, response);
-		response.render(CssHeaderItem.forReference(Foundation.getFoundationCssReference()));
-	}
-
-	@Override
 	public void detach(Component component) {
 		if (showTypeModel != null) {
 			showTypeModel.detach();
 		}
 		super.detach(component);
 	}
-	
 }
