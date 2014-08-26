@@ -8,7 +8,7 @@ public class FoundationBorderTest {
 	@Test
 	public void renderTest() {
 		WicketTester tester = new WicketTester();
-		tester.startComponentInPage(FoundationBorder.class);
+		tester.startComponentInPage(FoundationPanelBorder.class);
 		tester.dumpPage();
 	}
 
