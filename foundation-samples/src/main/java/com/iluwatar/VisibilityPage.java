@@ -16,7 +16,8 @@ import com.iluwatar.foundation.behavior.TouchDetectionBehavior;
 import com.iluwatar.foundation.behavior.TouchDetectionBehavior.TouchDetectionType;
 import com.iluwatar.foundation.behavior.VisibleForScreenSizeBehavior;
 import com.iluwatar.foundation.behavior.VisibleForScreenSizeBehavior.VisibleForScreenSizeType;
-import com.iluwatar.foundation.border.FoundationPanelBorder;
+import com.iluwatar.foundation.foundationpanel.FoundationPanelBorder;
+import com.iluwatar.foundation.foundationpanel.FoundationPanelType;
 
 public class VisibilityPage extends BasePage {
 
@@ -27,7 +28,7 @@ public class VisibilityPage extends BasePage {
 		
 		// show by screen size
 		
-		FoundationPanelBorder showByScreenSize = new FoundationPanelBorder("showByScreenSize");
+		FoundationPanelBorder showByScreenSize = new FoundationPanelBorder("showByScreenSize", Model.of(FoundationPanelType.NORMAL));
 		add(showByScreenSize);
 		
 		Label showForSmallOnly = new Label("showForSmallOnly", Model.of("This text is shown only on a small screen."));
@@ -64,7 +65,7 @@ public class VisibilityPage extends BasePage {
 		
 		// hide by screen size
 		
-		FoundationPanelBorder hideByScreenSize = new FoundationPanelBorder("hideByScreenSize");
+		FoundationPanelBorder hideByScreenSize = new FoundationPanelBorder("hideByScreenSize", Model.of(FoundationPanelType.NORMAL));
 		add(hideByScreenSize);
 		
 		Label hideForSmallOnly = new Label("hideForSmallOnly", Model.of("You are not on a small screen."));
@@ -101,7 +102,7 @@ public class VisibilityPage extends BasePage {
 		
 		// orientation detection
 		
-		FoundationPanelBorder orientationDetection = new FoundationPanelBorder("orientationDetection");
+		FoundationPanelBorder orientationDetection = new FoundationPanelBorder("orientationDetection", Model.of(FoundationPanelType.NORMAL));
 		add(orientationDetection);
 		
 		Label showForLandscape = new Label("showForLandscape", Model.of("You are in landscape orientation."));
@@ -114,7 +115,7 @@ public class VisibilityPage extends BasePage {
 		
 		// touch detection
 		
-		FoundationPanelBorder touchDetection = new FoundationPanelBorder("touchDetection");
+		FoundationPanelBorder touchDetection = new FoundationPanelBorder("touchDetection", Model.of(FoundationPanelType.NORMAL));
 		add(touchDetection);
 		
 		Label showForTouch = new Label("showForTouch", Model.of("You are on a touch-enabled device."));
@@ -127,7 +128,7 @@ public class VisibilityPage extends BasePage {
 		
 		// accessibility - hidden by screen size
 		
-		FoundationPanelBorder hiddenFor = new FoundationPanelBorder("hiddenFor");
+		FoundationPanelBorder hiddenFor = new FoundationPanelBorder("hiddenFor", Model.of(FoundationPanelType.NORMAL));
 		add(hiddenFor);
 		
 		Label hiddenForSmallOnly = new Label("hiddenForSmallOnly", Model.of("You are not on a small screen."));
@@ -164,7 +165,7 @@ public class VisibilityPage extends BasePage {
 		
 		// accessibility - visible by screen size
 		
-		FoundationPanelBorder visibleFor = new FoundationPanelBorder("visibleFor");
+		FoundationPanelBorder visibleFor = new FoundationPanelBorder("visibleFor", Model.of(FoundationPanelType.NORMAL));
 		add(visibleFor);
 		
 		Label visibleForSmallOnly = new Label("visibleForSmallOnly", Model.of("This text is visible only on a small screen."));

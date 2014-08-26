@@ -6,6 +6,8 @@ import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
 
+import com.iluwatar.foundation.foundationpanel.FoundationPanel;
+
 public class FoundationPanelTest {
 
 	@Test

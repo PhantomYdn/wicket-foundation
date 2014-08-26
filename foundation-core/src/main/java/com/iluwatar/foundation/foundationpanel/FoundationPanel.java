@@ -1,4 +1,4 @@
-package com.iluwatar.foundation.component;
+package com.iluwatar.foundation.foundationpanel;
 
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssHeaderItem;

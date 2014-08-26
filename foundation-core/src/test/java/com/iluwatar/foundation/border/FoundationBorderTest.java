@@ -3,6 +3,8 @@ package com.iluwatar.foundation.border;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
 
+import com.iluwatar.foundation.foundationpanel.FoundationPanelBorder;
+
 public class FoundationBorderTest {
 	
 	@Test
