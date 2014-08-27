@@ -1,6 +1,6 @@
-package com.iluwatar.foundation.behavior;
+package com.iluwatar.foundation.visibility;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.Model;
@@ -9,10 +9,10 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.iluwatar.foundation.visibility.VisibleForScreenSizeBehavior;
-import com.iluwatar.foundation.visibility.VisibleForScreenSizeBehavior.VisibleForScreenSizeType;
+import com.iluwatar.foundation.visibility.ShowByScreenSizeBehavior;
+import com.iluwatar.foundation.visibility.ShowByScreenSizeBehavior.ShowByScreenSizeType;
 
-public class VisibleForScreenSizeBehaviorTest {
+public class ShowByScreenSizeBehaviorTest {
 
 	private WebMarkupContainer container;
 	
@@ -22,14 +22,14 @@ public class VisibleForScreenSizeBehaviorTest {
 	public void setup() {
 		tester = new WicketTester();
 		container = new WebMarkupContainer("id");
-		container.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_MEDIUM_UP)));
+		container.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.SHOW_FOR_MEDIUM_UP)));
 	}
 	
 	@Test
 	public void test() {
 		tester.startComponentInPage(container);
 		TagTester tagTester = tester.getTagByWicketId("id");
-		assertEquals("visible-for-medium-up", tagTester.getAttribute("class"));
+		assertEquals("show-for-medium-up", tagTester.getAttribute("class"));
 	}
 
 }

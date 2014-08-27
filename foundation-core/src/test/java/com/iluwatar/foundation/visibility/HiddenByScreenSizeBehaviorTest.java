@@ -1,4 +1,4 @@
-package com.iluwatar.foundation.behavior;
+package com.iluwatar.foundation.visibility;
 
 import static org.junit.Assert.assertEquals;
 

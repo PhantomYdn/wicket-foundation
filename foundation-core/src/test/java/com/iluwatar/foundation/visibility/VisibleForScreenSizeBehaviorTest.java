@@ -1,4 +1,4 @@
-package com.iluwatar.foundation.behavior;
+package com.iluwatar.foundation.visibility;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,10 +9,10 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.iluwatar.foundation.visibility.ShowByOrientationBehavior;
-import com.iluwatar.foundation.visibility.ShowByOrientationBehavior.ShowByOrientationType;
+import com.iluwatar.foundation.visibility.VisibleForScreenSizeBehavior;
+import com.iluwatar.foundation.visibility.VisibleForScreenSizeBehavior.VisibleForScreenSizeType;
 
-public class ShowByOrientationBehaviorTest {
+public class VisibleForScreenSizeBehaviorTest {
 
 	private WebMarkupContainer container;
 	
@@ -22,14 +22,14 @@ public class ShowByOrientationBehaviorTest {
 	public void setup() {
 		tester = new WicketTester();
 		container = new WebMarkupContainer("id");
-		container.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationType.SHOW_FOR_LANDSCAPE)));
+		container.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScreenSizeType.VISIBLE_FOR_MEDIUM_UP)));
 	}
 	
 	@Test
 	public void test() {
 		tester.startComponentInPage(container);
 		TagTester tagTester = tester.getTagByWicketId("id");
-		assertEquals("show-for-landscape", tagTester.getAttribute("class"));
+		assertEquals("visible-for-medium-up", tagTester.getAttribute("class"));
 	}
 
 }
