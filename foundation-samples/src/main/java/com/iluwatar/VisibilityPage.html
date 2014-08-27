@@ -34,7 +34,7 @@ showForSmallOnly.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.
 </pre>
 
       <h4>Rendered HTML</h4>
-      <p wicket:id="showByScreenSize">
+      <div wicket:id="showByScreenSize">
         <strong wicket:id="showForSmallOnly"></strong>
         <strong wicket:id="showForMediumUp"></strong>
         <strong wicket:id="showForMediumOnly"></strong>
@@ -43,7 +43,7 @@ showForSmallOnly.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.
         <strong wicket:id="showForXlargeUp"></strong>
         <strong wicket:id="showForXlargeOnly"></strong>
         <strong wicket:id="showForXxlargeUp"></strong>
-      </p>
+      </div>
       
       <h3 id="hide-by-screen-size">Hide by Screen Size</h3>
       <p>This example shows the opposite: It uses the <strong>hide</strong> visibility classes to state which elements should disappear based on your device&#39;s screen size or orientation. Users will see elements on every browser <strong>except</strong> those that meet these conditions.</p>
@@ -74,16 +74,16 @@ hideForSmallOnly.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.
 </pre>
 
       <h4>Rendered HTML</h4>
-      <p wicket:id="hideByScreenSize">
-      <strong wicket:id="hideForSmallOnly"></strong>
-      <strong wicket:id="hideForMediumUp"></strong>
-      <strong wicket:id="hideForMediumOnly"></strong>
-      <strong wicket:id="hideForLargeUp"></strong>
-      <strong wicket:id="hideForLargeOnly"></strong>
-      <strong wicket:id="hideForXlargeUp"></strong>
-      <strong wicket:id="hideForXlargeOnly"></strong>
-      <strong wicket:id="hideForXxlargeUp"></strong>
-      </p>
+      <div wicket:id="hideByScreenSize">
+        <strong wicket:id="hideForSmallOnly"></strong>
+        <strong wicket:id="hideForMediumUp"></strong>
+        <strong wicket:id="hideForMediumOnly"></strong>
+        <strong wicket:id="hideForLargeUp"></strong>
+        <strong wicket:id="hideForLargeOnly"></strong>
+        <strong wicket:id="hideForXlargeUp"></strong>
+        <strong wicket:id="hideForXlargeOnly"></strong>
+        <strong wicket:id="hideForXxlargeUp"></strong>
+      </div>
       <h3 id="orientation-detection">Orientation Detection</h3>
       <p>This straightforward example shows how two strings of text determine whether or not an element is visible in different orientations. This will change on mobile devices when you rotate the device. On desktop, the orientation is almost always reported as landscape.</p>
       <h4>HTML</h4>
@@ -108,10 +108,10 @@ showForLandscape.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationTyp
 </pre>
 
       <h4>Rendered HTML</h4>
-      <p wicket:id="orientationDetection">
-      <strong wicket:id="showForLandscape"></strong>
-      <strong wicket:id="showForPortrait"></strong>
-      </p>
+      <div wicket:id="orientationDetection">
+        <strong wicket:id="showForLandscape"></strong>
+        <strong wicket:id="showForPortrait"></strong>
+      </div>
       <h3 id="touch-detection">Touch Detection</h3>
       <p>There are also visibility classes to hide or show content based on whether a device supports touch (as determined by Modernizr).</p>
       <h4>HTML</h4>
@@ -135,10 +135,10 @@ showForTouch.add(new TouchDetectionBehavior(Model.of(TouchDetectionType.SHOW_FOR
 </pre>
 
       <h4>Rendered HTML</h4>
-      <p wicket:id="touchDetection">
-      <strong wicket:id="showForTouch">You are on a touch-enabled device.</strong>
-      <strong wicket:id="hideForTouch">You are not on a touch-enabled device.</strong>
-      </p>
+      <div wicket:id="touchDetection">
+        <strong wicket:id="showForTouch">You are on a touch-enabled device.</strong>
+        <strong wicket:id="hideForTouch">You are not on a touch-enabled device.</strong>
+      </div>
       <h3 id="accessibility">Accessibility</h3>
       <p>Finally, if you want to hide some content but still make it accessible for screen readers, use the <strong>hidden</strong> visibility classes. Do not confuse these classes with <strong>hide</strong> visibility classes. Use these classes in conjunction with the <strong>hide</strong> and <strong>show</strong> visibility classes to control complex layouts while offering accessibility for those using screen readers.</p>
       <h4>HTML</h4>
@@ -168,16 +168,16 @@ hiddenForSmallOnly.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSiz
 </pre>
 
       <h4>Rendered HTML</h4>
-      <p wicket:id="hiddenFor">
-      <strong wicket:id="hiddenForSmallOnly"></strong>
-      <strong wicket:id="hiddenForMediumUp"></strong>
-      <strong wicket:id="hiddenForMediumOnly"></strong>
-      <strong wicket:id="hiddenForLargeUp"></strong>
-      <strong wicket:id="hiddenForLargeOnly"></strong>
-      <strong wicket:id="hiddenForXlargeUp"></strong>
-      <strong wicket:id="hiddenForXlargeOnly"></strong>
-      <strong wicket:id="hiddenForXxlargeUp"></strong>
-      </p>
+      <div wicket:id="hiddenFor">
+        <strong wicket:id="hiddenForSmallOnly"></strong>
+        <strong wicket:id="hiddenForMediumUp"></strong>
+        <strong wicket:id="hiddenForMediumOnly"></strong>
+        <strong wicket:id="hiddenForLargeUp"></strong>
+        <strong wicket:id="hiddenForLargeOnly"></strong>
+        <strong wicket:id="hiddenForXlargeUp"></strong>
+        <strong wicket:id="hiddenForXlargeOnly"></strong>
+        <strong wicket:id="hiddenForXxlargeUp"></strong>
+      </div>
       <p>To reverse the rules defined by <strong>hidden</strong>, use the <strong>visible</strong> visibility classes.</p>
       <h4>HTML</h4>
       
@@ -206,16 +206,16 @@ visibleForSmallOnly.add(new VisibleForScreenSizeBehavior(Model.of(VisibleForScre
 </pre>
 
       <h4>Rendered HTML</h4>
-      <p wicket:id="visibleFor">
-      <strong wicket:id="visibleForSmallOnly"></strong>
-      <strong wicket:id="visibleForMediumUp"></strong>
-      <strong wicket:id="visibleForMediumOnly"></strong>
-      <strong wicket:id="visibleForLargeUp"></strong>
-      <strong wicket:id="visibleForLargeOnly"></strong>
-      <strong wicket:id="visibleForXlargeUp"></strong>
-      <strong wicket:id="visibleForXlargeOnly"></strong>
-      <strong wicket:id="visibleForXxlargeUp"></strong>
-      </p>
+      <div wicket:id="visibleFor">
+        <strong wicket:id="visibleForSmallOnly"></strong>
+        <strong wicket:id="visibleForMediumUp"></strong>
+        <strong wicket:id="visibleForMediumOnly"></strong>
+        <strong wicket:id="visibleForLargeUp"></strong>
+        <strong wicket:id="visibleForLargeOnly"></strong>
+        <strong wicket:id="visibleForXlargeUp"></strong>
+        <strong wicket:id="visibleForXlargeOnly"></strong>
+        <strong wicket:id="visibleForXxlargeUp"></strong>
+      </div>
       <hr>
     </div>
   </wicket:extend>
