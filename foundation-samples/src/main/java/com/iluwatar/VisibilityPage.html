@@ -24,7 +24,7 @@
       <h4>Java</h4>
       
 <pre><code class="language-html"><div class="code-container">
-FoundationBorder showByScreenSize = new FoundationBorder("showByScreenSize");
+FoundationPanelBorder showByScreenSize = new FoundationPanelBorder("showByScreenSize", Model.of(FoundationPanelType.NORMAL));
 add(showByScreenSize);
 Label showForSmallOnly = new Label(&quot;showForSmallOnly&quot;, Model.of(&quot;This text is shown only on a small screen.&quot;));
 showByScreenSize.add(showForSmallOnly);
@@ -64,7 +64,7 @@ showForSmallOnly.add(new ShowByScreenSizeBehavior(Model.of(ShowByScreenSizeType.
       <h4>Java</h4>
       
 <pre><code class="language-html"><div class="code-container">
-FoundationBorder hideByScreenSize = new FoundationBorder("hideByScreenSize");
+FoundationPanelBorder hideByScreenSize = new FoundationPanelBorder("hideByScreenSize", Model.of(FoundationPanelType.NORMAL));
 add(hideByScreenSize);
 Label hideForSmallOnly = new Label(&quot;hideForSmallOnly&quot;, Model.of(&quot;You are not on a small screen.&quot;));
 hideByScreenSize.add(hideForSmallOnly);
@@ -98,7 +98,7 @@ hideForSmallOnly.add(new HideByScreenSizeBehavior(Model.of(HideByScreenSizeType.
       <h4>Java</h4>
       
 <pre><code class="language-html"><div class="code-container">
-FoundationBorder orientationDetection = new FoundationBorder("orientationDetection");
+FoundationPanelBorder orientationDetection = new FoundationPanelBorder("orientationDetection", Model.of(FoundationPanelType.NORMAL));
 add(orientationDetection);
 Label showForLandscape = new Label("showForLandscape", Model.of("You are in landscape orientation."));
 orientationDetection.add(showForLandscape);
@@ -125,7 +125,7 @@ showForLandscape.add(new ShowByOrientationBehavior(Model.of(ShowByOrientationTyp
       <h4>Java</h4>
       
 <pre><code class="language-html"><div class="code-container">
-FoundationBorder touchDetection = new FoundationBorder("touchDetection");
+FoundationPanelBorder touchDetection = new FoundationPanelBorder("touchDetection", Model.of(FoundationPanelType.NORMAL));
 add(touchDetection);
 Label showForTouch = new Label("showForTouch", Model.of("You are on a touch-enabled device."));
 touchDetection.add(showForTouch);
@@ -158,7 +158,7 @@ showForTouch.add(new TouchDetectionBehavior(Model.of(TouchDetectionType.SHOW_FOR
       <h4>Java</h4>
 
 <pre><code class="language-html"><div class="code-container">
-FoundationBorder hiddenFor = new FoundationBorder("hiddenFor");
+FoundationPanelBorder hiddenFor = new FoundationPanelBorder("hiddenFor", Model.of(FoundationPanelType.NORMAL));
 add(hiddenFor);
 Label hiddenForSmallOnly = new Label("hiddenForSmallOnly", Model.of("You are not on a small screen."));
 hiddenFor.add(hiddenForSmallOnly);
@@ -196,7 +196,7 @@ hiddenForSmallOnly.add(new HiddenByScreenSizeBehavior(Model.of(HiddenByScreenSiz
       <h4>Java</h4>
       
 <pre><code class="language-html"><div class="code-container">
-FoundationBorder visibleFor = new FoundationBorder("visibleFor");
+FoundationPanelBorder visibleFor = new FoundationPanelBorder("visibleFor", Model.of(FoundationPanelType.NORMAL));
 add(visibleFor);
 Label visibleForSmallOnly = new Label("visibleForSmallOnly", Model.of("This text is visible only on a small screen."));
 visibleFor.add(visibleForSmallOnly);
