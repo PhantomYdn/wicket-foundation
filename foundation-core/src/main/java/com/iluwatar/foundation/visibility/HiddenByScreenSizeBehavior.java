@@ -1,9 +1,10 @@
-package com.iluwatar.foundation.behavior;
+package com.iluwatar.foundation.visibility;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.model.IModel;
 
+import com.iluwatar.foundation.behavior.FoundationBaseBehavior;
 import com.iluwatar.foundation.util.Attribute;
 import com.iluwatar.foundation.util.StringUtil;
 

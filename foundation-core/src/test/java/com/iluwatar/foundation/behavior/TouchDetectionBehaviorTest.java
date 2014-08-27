@@ -9,7 +9,8 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.iluwatar.foundation.behavior.TouchDetectionBehavior.TouchDetectionType;
+import com.iluwatar.foundation.visibility.TouchDetectionBehavior;
+import com.iluwatar.foundation.visibility.TouchDetectionBehavior.TouchDetectionType;
 
 public class TouchDetectionBehaviorTest {
 

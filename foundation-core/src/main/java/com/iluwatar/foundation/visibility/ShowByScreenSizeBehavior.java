@@ -1,23 +1,30 @@
-package com.iluwatar.foundation.behavior;
+package com.iluwatar.foundation.visibility;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.model.IModel;
 
+import com.iluwatar.foundation.behavior.FoundationBaseBehavior;
 import com.iluwatar.foundation.util.Attribute;
 import com.iluwatar.foundation.util.StringUtil;
 
-public class ShowByOrientationBehavior extends FoundationBaseBehavior {
+public class ShowByScreenSizeBehavior extends FoundationBaseBehavior {
 
 	private static final long serialVersionUID = 1L;
 	
-	public enum ShowByOrientationType { 
-		SHOW_FOR_LANDSCAPE,
-		SHOW_FOR_PORTRAIT };
+	public enum ShowByScreenSizeType { 
+		SHOW_FOR_SMALL_ONLY,
+		SHOW_FOR_MEDIUM_UP,
+		SHOW_FOR_MEDIUM_ONLY,
+		SHOW_FOR_LARGE_UP,
+		SHOW_FOR_LARGE_ONLY,
+		SHOW_FOR_XLARGE_UP,
+		SHOW_FOR_XLARGE_ONLY,
+		SHOW_FOR_XXLARGE_UP };
 	
-	private IModel<ShowByOrientationType> showTypeModel;
+	private IModel<ShowByScreenSizeType> showTypeModel;
 
-	public ShowByOrientationBehavior(IModel<ShowByOrientationType> showTypeModel) {
+	public ShowByScreenSizeBehavior(IModel<ShowByScreenSizeType> showTypeModel) {
 		this.showTypeModel = showTypeModel;
 	}
 	

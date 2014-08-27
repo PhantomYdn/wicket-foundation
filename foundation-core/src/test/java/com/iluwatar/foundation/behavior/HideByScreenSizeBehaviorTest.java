@@ -9,7 +9,8 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.iluwatar.foundation.behavior.HideByScreenSizeBehavior.HideByScreenSizeType;
+import com.iluwatar.foundation.visibility.HideByScreenSizeBehavior;
+import com.iluwatar.foundation.visibility.HideByScreenSizeBehavior.HideByScreenSizeType;
 
 public class HideByScreenSizeBehaviorTest {
 

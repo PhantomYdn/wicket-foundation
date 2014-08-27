@@ -9,7 +9,8 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.iluwatar.foundation.behavior.ShowByOrientationBehavior.ShowByOrientationType;
+import com.iluwatar.foundation.visibility.ShowByOrientationBehavior;
+import com.iluwatar.foundation.visibility.ShowByOrientationBehavior.ShowByOrientationType;
 
 public class ShowByOrientationBehaviorTest {
 

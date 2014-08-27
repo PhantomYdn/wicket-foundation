@@ -4,20 +4,20 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import com.iluwatar.foundation.behavior.HiddenByScreenSizeBehavior;
-import com.iluwatar.foundation.behavior.HiddenByScreenSizeBehavior.HiddenByScreenSizeType;
-import com.iluwatar.foundation.behavior.HideByScreenSizeBehavior;
-import com.iluwatar.foundation.behavior.HideByScreenSizeBehavior.HideByScreenSizeType;
-import com.iluwatar.foundation.behavior.ShowByOrientationBehavior;
-import com.iluwatar.foundation.behavior.ShowByOrientationBehavior.ShowByOrientationType;
-import com.iluwatar.foundation.behavior.ShowByScreenSizeBehavior;
-import com.iluwatar.foundation.behavior.ShowByScreenSizeBehavior.ShowByScreenSizeType;
-import com.iluwatar.foundation.behavior.TouchDetectionBehavior;
-import com.iluwatar.foundation.behavior.TouchDetectionBehavior.TouchDetectionType;
-import com.iluwatar.foundation.behavior.VisibleForScreenSizeBehavior;
-import com.iluwatar.foundation.behavior.VisibleForScreenSizeBehavior.VisibleForScreenSizeType;
 import com.iluwatar.foundation.foundationpanel.FoundationPanelBorder;
 import com.iluwatar.foundation.foundationpanel.FoundationPanelType;
+import com.iluwatar.foundation.visibility.HiddenByScreenSizeBehavior;
+import com.iluwatar.foundation.visibility.HideByScreenSizeBehavior;
+import com.iluwatar.foundation.visibility.ShowByOrientationBehavior;
+import com.iluwatar.foundation.visibility.ShowByScreenSizeBehavior;
+import com.iluwatar.foundation.visibility.TouchDetectionBehavior;
+import com.iluwatar.foundation.visibility.VisibleForScreenSizeBehavior;
+import com.iluwatar.foundation.visibility.HiddenByScreenSizeBehavior.HiddenByScreenSizeType;
+import com.iluwatar.foundation.visibility.HideByScreenSizeBehavior.HideByScreenSizeType;
+import com.iluwatar.foundation.visibility.ShowByOrientationBehavior.ShowByOrientationType;
+import com.iluwatar.foundation.visibility.ShowByScreenSizeBehavior.ShowByScreenSizeType;
+import com.iluwatar.foundation.visibility.TouchDetectionBehavior.TouchDetectionType;
+import com.iluwatar.foundation.visibility.VisibleForScreenSizeBehavior.VisibleForScreenSizeType;
 
 public class VisibilityPage extends BasePage {
 

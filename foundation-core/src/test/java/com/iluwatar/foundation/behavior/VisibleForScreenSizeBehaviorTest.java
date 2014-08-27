@@ -9,7 +9,8 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.iluwatar.foundation.behavior.VisibleForScreenSizeBehavior.VisibleForScreenSizeType;
+import com.iluwatar.foundation.visibility.VisibleForScreenSizeBehavior;
+import com.iluwatar.foundation.visibility.VisibleForScreenSizeBehavior.VisibleForScreenSizeType;
 
 public class VisibleForScreenSizeBehaviorTest {
 
