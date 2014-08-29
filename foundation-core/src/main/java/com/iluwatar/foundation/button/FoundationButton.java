@@ -16,12 +16,19 @@ import com.iluwatar.foundation.util.StringUtil;
 public class FoundationButton extends Button {
 
 	private static final long serialVersionUID = 1L;
+
+	public static final String FOUNDATION_BUTTON_CSS_CLASS = "button";
 	
 	private IModel<FoundationButtonOptions> optionsModel;
 
 	public FoundationButton(String id) {
 		super(id);
 		optionsModel = Model.of(new FoundationButtonOptions());
+	}
+
+	public FoundationButton(String id, FoundationButtonOptions options) {
+		super(id);
+		optionsModel = Model.of(options);
 	}
 	
 	public FoundationButton(String id, IModel<String> model) {
