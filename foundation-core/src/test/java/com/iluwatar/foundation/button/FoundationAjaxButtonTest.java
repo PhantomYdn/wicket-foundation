@@ -3,6 +3,7 @@ package com.iluwatar.foundation.button;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import org.apache.wicket.markup.Markup;
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
@@ -15,12 +16,12 @@ import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonSt
 import com.iluwatar.foundation.util.StringUtil;
 
 public class FoundationAjaxButtonTest {
-
+	
 	@Test
 	public void testBasic() {
 		WicketTester tester = new WicketTester();
 		FoundationAjaxButton btn = new FoundationAjaxButton("btn");
-		tester.startComponentInPage(btn);
+		tester.startComponentInPage(btn, Markup.of("<html><head></head><body><form><a wicket:id=\"btn\"></a></form></body></html>"));
 		TagTester tagTester = tester.getTagByWicketId("btn");
 		assertEquals(FoundationButtonBehavior.FOUNDATION_BUTTON_CSS_CLASS, tagTester.getAttribute("class"));		
 	}
@@ -28,10 +29,10 @@ public class FoundationAjaxButtonTest {
 	@Test
 	public void testAdvancedSize() {
 		WicketTester tester = new WicketTester();
-		FoundationAjaxButton tiny = new FoundationAjaxButton("tiny", new FoundationButtonOptions(FoundationButtonSize.TINY));
-		tester.startComponentInPage(tiny);
+		FoundationAjaxButton btn = new FoundationAjaxButton("btn", new FoundationButtonOptions(FoundationButtonSize.TINY));
+		tester.startComponentInPage(btn, Markup.of("<html><head></head><body><form><a wicket:id=\"btn\"></a></form></body></html>"));
 		tester.dumpPage();
-		TagTester tagTester = tester.getTagByWicketId("tiny");
+		TagTester tagTester = tester.getTagByWicketId("btn");
 		assertTrue(tagTester.getAttributeContains("class", FoundationButtonBehavior.FOUNDATION_BUTTON_CSS_CLASS));
 		assertTrue(tagTester.getAttributeContains("class", StringUtil.EnumNameToCssClassName(FoundationButtonSize.TINY.name())));
 	}
@@ -39,10 +40,10 @@ public class FoundationAjaxButtonTest {
 	@Test
 	public void testAdvancedColor() {
 		WicketTester tester = new WicketTester();
-		FoundationAjaxButton success = new FoundationAjaxButton("success", new FoundationButtonOptions(FoundationButtonColor.SUCCESS));
-		tester.startComponentInPage(success);
+		FoundationAjaxButton btn = new FoundationAjaxButton("btn", new FoundationButtonOptions(FoundationButtonColor.SUCCESS));
+		tester.startComponentInPage(btn, Markup.of("<html><head></head><body><form><a wicket:id=\"btn\"></a></form></body></html>"));
 		tester.dumpPage();
-		TagTester tagTester = tester.getTagByWicketId("success");
+		TagTester tagTester = tester.getTagByWicketId("btn");
 		assertTrue(tagTester.getAttributeContains("class", FoundationButtonBehavior.FOUNDATION_BUTTON_CSS_CLASS));
 		assertTrue(tagTester.getAttributeContains("class", StringUtil.EnumNameToCssClassName(FoundationButtonColor.SUCCESS.name())));
 	}
@@ -50,10 +51,10 @@ public class FoundationAjaxButtonTest {
 	@Test
 	public void testAdvancedRadius() {
 		WicketTester tester = new WicketTester();
-		FoundationAjaxButton radius = new FoundationAjaxButton("radius", new FoundationButtonOptions(FoundationButtonRadius.RADIUS));
-		tester.startComponentInPage(radius);
+		FoundationAjaxButton btn = new FoundationAjaxButton("btn", new FoundationButtonOptions(FoundationButtonRadius.RADIUS));
+		tester.startComponentInPage(btn, Markup.of("<html><head></head><body><form><a wicket:id=\"btn\"></a></form></body></html>"));
 		tester.dumpPage();
-		TagTester tagTester = tester.getTagByWicketId("radius");
+		TagTester tagTester = tester.getTagByWicketId("btn");
 		assertTrue(tagTester.getAttributeContains("class", FoundationButtonBehavior.FOUNDATION_BUTTON_CSS_CLASS));
 		assertTrue(tagTester.getAttributeContains("class", StringUtil.EnumNameToCssClassName(FoundationButtonRadius.RADIUS.name())));
 	}
@@ -61,10 +62,10 @@ public class FoundationAjaxButtonTest {
 	@Test
 	public void testAdvancedState() {
 		WicketTester tester = new WicketTester();
-		FoundationAjaxButton state = new FoundationAjaxButton("state", new FoundationButtonOptions(FoundationButtonState.DISABLED));
-		tester.startComponentInPage(state);
+		FoundationAjaxButton btn = new FoundationAjaxButton("btn", new FoundationButtonOptions(FoundationButtonState.DISABLED));
+		tester.startComponentInPage(btn, Markup.of("<html><head></head><body><form><a wicket:id=\"btn\"></a></form></body></html>"));
 		tester.dumpPage();
-		TagTester tagTester = tester.getTagByWicketId("state");
+		TagTester tagTester = tester.getTagByWicketId("btn");
 		assertTrue(tagTester.getAttributeContains("class", FoundationButtonBehavior.FOUNDATION_BUTTON_CSS_CLASS));
 		assertTrue(tagTester.getAttributeContains("class", StringUtil.EnumNameToCssClassName(FoundationButtonState.DISABLED.name())));
 	}
@@ -72,10 +73,10 @@ public class FoundationAjaxButtonTest {
 	@Test
 	public void testAdvancedExpansion() {
 		WicketTester tester = new WicketTester();
-		FoundationAjaxButton expansion = new FoundationAjaxButton("expansion", new FoundationButtonOptions(FoundationButtonExpansion.EXPAND));
-		tester.startComponentInPage(expansion);
+		FoundationAjaxButton btn = new FoundationAjaxButton("btn", new FoundationButtonOptions(FoundationButtonExpansion.EXPAND));
+		tester.startComponentInPage(btn, Markup.of("<html><head></head><body><form><a wicket:id=\"btn\"></a></form></body></html>"));
 		tester.dumpPage();
-		TagTester tagTester = tester.getTagByWicketId("expansion");
+		TagTester tagTester = tester.getTagByWicketId("btn");
 		assertTrue(tagTester.getAttributeContains("class", FoundationButtonBehavior.FOUNDATION_BUTTON_CSS_CLASS));
 		assertTrue(tagTester.getAttributeContains("class", StringUtil.EnumNameToCssClassName(FoundationButtonExpansion.EXPAND.name())));
 	}
