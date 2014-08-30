@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.wicket.markup.Markup;
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
@@ -56,7 +55,8 @@ public class FoundationAjaxButtonTest {
 	}
 	
 	private void testButton(WicketTester tester, FoundationAjaxButton btn, List<String> additionalCssClassesToVerify) {
-		tester.startComponentInPage(btn, Markup.of("<html><head></head><body><form><a wicket:id=\"" + btn.getId() + "\"></a></form></body></html>"));
+		FoundationButtonTestPage page = new FoundationButtonTestPage(btn);
+		tester.startPage(page);
 		TagTester tagTester = tester.getTagByWicketId(btn.getId());
 		assertTrue(tagTester.getAttributeContains("class", FoundationButtonBehavior.FOUNDATION_BUTTON_CSS_CLASS));
 		for (String clazz: additionalCssClassesToVerify) {
