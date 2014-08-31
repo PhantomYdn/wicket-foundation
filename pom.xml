@@ -8,8 +8,8 @@
   <packaging>pom</packaging>
   
   <modules>
-    <module>foundation-samples</module>
-    <module>foundation-core</module>
+    <module>wicket-foundation-samples</module>
+    <module>wicket-foundation-core</module>
   </modules>
   
   <properties>
