@@ -10,71 +10,64 @@
 
     <hr>
     <h2 id="basic">Basic</h2>
-    <p>
-      Add a class of
-      <code>.breadcrumbs</code>
-      to a
-      <code>ul</code>
-      element. List items will automatically be styled, and you can add
-      <code>.current</code>
-      or
-      <code>.unavailable</code>
-      classes to list items to denote their state.
-    </p>
     <div>
       <div>
         <h4>HTML</h4>
         
-<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">&quot;breadcrumbs&quot;</span>&gt;</span>
-<span class="tag">&lt;<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&quot;#&quot;</span>&gt;</span>Home<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&quot;#&quot;</span>&gt;</span>Features<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">&quot;unavailable&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&quot;#&quot;</span>&gt;</span>Gene Splicing<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">&quot;current&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&quot;#&quot;</span>&gt;</span>Cloning<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">nav</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;basic&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">/nav</span>&gt;</span>
+</div></code>
+</pre>
+
+      </div>
+      <div>
+        <h4>Java</h4>
+        
+<pre><code class="language-html"><div class="code-container">List&lt;BreadcrumbsItem&gt; items = new ArrayList&lt;&gt;();
+items.add(new BreadcrumbsItem(CatalogPage.class, "First", false));
+items.add(new BreadcrumbsItem(ButtonsPage.class, "Second", false));
+items.add(new BreadcrumbsItem(VisibilityPage.class, "Third", false));
+items.add(new BreadcrumbsItem(BreadcrumbsPage.class, "Fourth", false));
+add(new BreadcrumbsPanel("basic", new ListModel&lt;&gt;(items)));
 </div></code>
 </pre>
 
       </div>
       <div>
         <h4>Rendered HTML</h4>
-        <ul class="breadcrumbs">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Features</a></li>
-          <li class="unavailable"><a href="#">Gene Splicing</a></li>
-          <li class="current"><a href="#">Cloning</a></li>
-        </ul>
+        <nav wicket:id="basic"></nav>
       </div>
+      <div class="verticalPadding50"></div>
     </div>
 
-    <p>
-      You can also add a
-      <code>.breadcrumbs</code>
-      class to a
-      <code>nav</code>
-      element containing anchor links to get the same result.
-    </p>
+    <hr>
+    <h2 id="advanced">Advanced</h2>
     <div>
       <div>
         <h4>HTML</h4>
-<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">nav</span> <span class="attribute">class</span>=<span class="value">&quot;breadcrumbs&quot;</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&quot;#&quot;</span>&gt;</span>Home<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">&quot;#&quot;</span>&gt;</span>Features<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">&quot;unavailable&quot;</span> <span class="attribute">href</span>=<span class="value">&quot;#&quot;</span>&gt;</span>Gene Splicing<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">&quot;current&quot;</span> <span class="attribute">href</span>=<span class="value">&quot;#&quot;</span>&gt;</span>Cloning<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
+        
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">nav</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;advanced&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">/nav</span>&gt;</span>
+</div></code>
+</pre>
+
+      </div>
+      <div>
+        <h4>Java</h4>
+        
+<pre><code class="language-html"><div class="code-container">List&lt;BreadcrumbsItem&gt; advancedItems = new ArrayList&lt;&gt;();
+advancedItems.add(new BreadcrumbsItem(CatalogPage.class, "First", false));
+advancedItems.add(new BreadcrumbsItem(ButtonsPage.class, "Second", false));
+advancedItems.add(new BreadcrumbsItem(VisibilityPage.class, "Third", false));
+advancedItems.add(new BreadcrumbsItem(GridPage.class, "Fourth", true));
+advancedItems.add(new BreadcrumbsItem(BlockGridPage.class, "Fifth", true));
+advancedItems.add(new BreadcrumbsItem(BreadcrumbsPage.class, "Sixth", false));
+add(new BreadcrumbsPanel("advanced", new ListModel&lt;&gt;(advancedItems)));
 </div></code>
 </pre>
 
       </div>
       <div>
         <h4>Rendered HTML</h4>
-        <nav class="breadcrumbs">
-          <a href="#">Home</a> <a href="#">Features</a> <a
-            class="unavailable" href="#">Gene Splicing</a> <a
-            class="current" href="#">Cloning</a>
-        </nav>
-
+        <nav wicket:id="advanced"></nav>
       </div>
     </div>
   </div>

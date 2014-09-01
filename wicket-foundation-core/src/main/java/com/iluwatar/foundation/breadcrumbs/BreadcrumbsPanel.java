@@ -11,6 +11,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
 import com.iluwatar.foundation.component.FoundationBasePanel;
+import com.iluwatar.foundation.util.Attribute;
 
 public class BreadcrumbsPanel extends FoundationBasePanel {
 
@@ -21,7 +22,7 @@ public class BreadcrumbsPanel extends FoundationBasePanel {
 		RepeatingView rv = new RepeatingView("items");
 		add(rv);
 		for (BreadcrumbsItem item: model.getObject()) {
-			rv.add(new BreadcrumbsLink(rv.newChildId(), item.getClazz(), Model.of(item.getTitle())));
+			rv.add(new BreadcrumbsLink(rv.newChildId(), item.getClazz(), Model.of(item.getTitle()), item.isDisabled()));
 		}
 	}
 	
@@ -29,12 +30,29 @@ public class BreadcrumbsPanel extends FoundationBasePanel {
 		
 		private static final long serialVersionUID = 1L;
 		private IModel<String> titleModel;
+		private boolean disabled;
 		
-		public BreadcrumbsLink(String id, Class<? extends Page> clazz, IModel<String> titleModel) {
+		public BreadcrumbsLink(String id, Class<? extends Page> clazz, IModel<String> titleModel, boolean disabled) {
 			super(id, clazz);
 			this.titleModel = titleModel;
+			this.disabled = disabled;
 		}
 
+		@Override
+		protected void onComponentTag(ComponentTag tag) {
+			if (getPage().getClass().equals(super.getPageClass())) {
+				Attribute.setClass(tag, BreadcrumbsClassNames.CURRENT);
+			} else {
+				Attribute.removeClass(tag, BreadcrumbsClassNames.CURRENT);
+			}
+			if (disabled) {
+				Attribute.addClass(tag, BreadcrumbsClassNames.UNAVAILABLE);
+			} else {
+				Attribute.removeClass(tag, BreadcrumbsClassNames.UNAVAILABLE);
+			}
+			super.onComponentTag(tag);
+		}
+		
 		@Override
 		public void onComponentTagBody(MarkupStream markupStream,
 				ComponentTag openTag) {

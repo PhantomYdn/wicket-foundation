@@ -35,3 +35,11 @@ pre .string, pre .tag .value, pre .phpdoc, pre .tex .formula {
 .row.display .columns:nth-child(2),.row.display .columns.small-centered,.row.display .columns.large-centered {
 	background: #e1e1e1;
 }
+
+.verticalPadding30 {
+    padding-bottom: 30px;
+}
+
+.verticalPadding50 {
+	padding-bottom: 50px;
+}
