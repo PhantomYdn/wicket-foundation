@@ -59,7 +59,7 @@ public class FoundationBookmarkablePageLinkTest {
 	private void testButton(WicketTester tester, FoundationTestBookmarkablePageLink btn, List<String> additionalCssClassesToVerify) {
 		tester.startComponentInPage(btn);
 		TagTester tagTester = tester.getTagByWicketId(btn.getId());
-		assertTrue(tagTester.getAttributeContains("class", FoundationButtonBehavior.FOUNDATION_BUTTON_CSS_CLASS));
+		assertTrue(tagTester.getAttributeContains("class", FoundationButtonClassNames.BUTTON));
 		for (String clazz: additionalCssClassesToVerify) {
 			assertTrue(tagTester.getAttributeContains("class", clazz));
 		}

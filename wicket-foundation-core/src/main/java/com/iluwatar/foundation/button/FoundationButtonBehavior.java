@@ -11,7 +11,6 @@ import com.iluwatar.foundation.util.StringUtil;
 public class FoundationButtonBehavior extends FoundationBaseBehavior {
 
 	private static final long serialVersionUID = 1L;
-	public static final String FOUNDATION_BUTTON_CSS_CLASS = "button";
 	
 	private IModel<FoundationButtonOptions> optionsModel;
 
@@ -22,7 +21,7 @@ public class FoundationButtonBehavior extends FoundationBaseBehavior {
 	@Override
 	public void onComponentTag(Component component, ComponentTag tag) {
 
-		Attribute.setClass(tag, FOUNDATION_BUTTON_CSS_CLASS);
+		Attribute.setClass(tag, FoundationButtonClassNames.BUTTON);
 		FoundationButtonOptions options = optionsModel.getObject();
 		if (options.getFoundationButtonSize() != null) {
 			Attribute.addClass(tag, StringUtil.EnumNameToCssClassName(options
