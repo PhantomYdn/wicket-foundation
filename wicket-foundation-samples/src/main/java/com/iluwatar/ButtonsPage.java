@@ -4,12 +4,12 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.iluwatar.foundation.button.FoundationButton;
+import com.iluwatar.foundation.button.FoundationButtonColor;
+import com.iluwatar.foundation.button.FoundationButtonExpansion;
 import com.iluwatar.foundation.button.FoundationButtonOptions;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonColor;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonExpansion;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonRadius;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonSize;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonState;
+import com.iluwatar.foundation.button.FoundationButtonRadius;
+import com.iluwatar.foundation.button.FoundationButtonSize;
+import com.iluwatar.foundation.button.FoundationButtonState;
 
 public class ButtonsPage extends BasePage {
 

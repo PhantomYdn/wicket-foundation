@@ -11,11 +11,6 @@ import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
 
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonColor;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonExpansion;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonRadius;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonSize;
-import com.iluwatar.foundation.button.FoundationButtonOptions.FoundationButtonState;
 import com.iluwatar.foundation.util.StringUtil;
 
 public class FoundationAjaxLinkTest {

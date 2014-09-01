@@ -43,26 +43,6 @@ public class FoundationButtonOptions implements Serializable {
 		this.expansion = options.getFoundationButtonExpansion();
 	}
 	
-	public enum FoundationButtonSize {
-		TINY, SMALL, LARGE;
-	}
-	
-	public enum FoundationButtonColor {
-		SECONDARY, SUCCESS, ALERT;
-	}
-	
-	public enum FoundationButtonRadius {
-		RADIUS, ROUND;
-	}
-	
-	public enum FoundationButtonState {
-		DISABLED;
-	}
-
-	public enum FoundationButtonExpansion {
-		EXPAND;
-	}
-
 	public FoundationButtonSize getFoundationButtonSize() {
 		return size;
 	}
