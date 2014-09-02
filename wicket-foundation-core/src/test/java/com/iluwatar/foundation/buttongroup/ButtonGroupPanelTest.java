@@ -5,11 +5,12 @@ import java.util.List;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.IModel;
+import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
 
-import com.iluwatar.foundation.button.FoundationButton;
 import com.iluwatar.foundation.button.FoundationButtonOptions;
+import com.iluwatar.foundation.button.FoundationLink;
 
 public class ButtonGroupPanelTest {
 
@@ -18,6 +19,8 @@ public class ButtonGroupPanelTest {
 		WicketTester tester = new WicketTester();
 		tester.startComponentInPage(createButtonGroup());
 		tester.dumpPage();
+		TagTester tag = tester.getTagByWicketId("buttons");
+		tag.getAttributeContains("class", ButtonGroupClassNames.BUTTON_GROUP);
 	}
 	
 	private TestButtonGroupPanel createButtonGroup() {
@@ -39,7 +42,16 @@ public class ButtonGroupPanelTest {
 
 		@Override
 		protected WebMarkupContainer createButton(int idx, String id, IModel<FoundationButtonOptions> optionsModel) {
-			return new FoundationButton(id, optionsModel.getObject());
+			return new FoundationLink<Void>(id, optionsModel.getObject()) {
+
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void onClick() {
+					setResponsePage(ButtonGroupTestPage.class);
+				}
+				
+			};
 		}
 	}
 }
