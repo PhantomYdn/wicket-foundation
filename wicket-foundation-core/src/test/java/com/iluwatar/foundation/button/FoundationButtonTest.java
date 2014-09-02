@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
@@ -15,10 +16,20 @@ import com.iluwatar.foundation.util.StringUtil;
 public class FoundationButtonTest {
 
 	@Test
-	public void testBasic() {
+	public void testBasic1() {
 		testButton(new WicketTester(), new FoundationButton("btn"), new ArrayList<String>());
 	}
 
+	@Test
+	public void testBasic2() {
+		testButton(new WicketTester(), new FoundationButton("btn", Model.of("foo")), new ArrayList<String>());
+	}
+
+	@Test
+	public void testBasic3() {
+		testButton(new WicketTester(), new FoundationButton("btn", Model.of("foo"), new ButtonOptions()), new ArrayList<String>());
+	}
+	
 	@Test
 	public void testAdvancedSize() {
 		testButton(new WicketTester(), new FoundationButton("btn", new ButtonOptions(FoundationButtonSize.TINY)), 
