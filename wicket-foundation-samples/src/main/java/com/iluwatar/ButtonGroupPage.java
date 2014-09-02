@@ -9,7 +9,7 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.iluwatar.foundation.button.FoundationButtonColor;
-import com.iluwatar.foundation.button.FoundationButtonOptions;
+import com.iluwatar.foundation.button.ButtonOptions;
 import com.iluwatar.foundation.button.FoundationButtonRadius;
 import com.iluwatar.foundation.button.FoundationLink;
 import com.iluwatar.foundation.buttongroup.ButtonGroupOptions;
@@ -26,15 +26,15 @@ public class ButtonGroupPage extends BasePage {
 	}
 	
 	private void createAndAddBasicButtonGroup() {
-		List<FoundationButtonOptions> btnOptions = Arrays.asList(
-				new FoundationButtonOptions(), new FoundationButtonOptions(), new FoundationButtonOptions());
+		List<ButtonOptions> btnOptions = Arrays.asList(
+				new ButtonOptions(), new ButtonOptions(), new ButtonOptions());
 		add(new ButtonGroupPanel("basic", new ButtonGroupOptions(), btnOptions) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			protected WebMarkupContainer createButton(int idx, String id,
-					IModel<FoundationButtonOptions> optionsModel) {
+					IModel<ButtonOptions> optionsModel) {
 				return new FoundationLink<String>(id, Model.of(String.format("Button %d", idx+1)), optionsModel.getObject()) {
 
 					private static final long serialVersionUID = 1L;
@@ -49,17 +49,17 @@ public class ButtonGroupPage extends BasePage {
 	}
 	
 	private void createAndAddAdvancedButtonGroup() {
-		List<FoundationButtonOptions> btnOptions = Arrays.asList(
-				new FoundationButtonOptions(FoundationButtonColor.ALERT), 
-				new FoundationButtonOptions(FoundationButtonColor.ALERT), 
-				new FoundationButtonOptions(FoundationButtonColor.ALERT));
+		List<ButtonOptions> btnOptions = Arrays.asList(
+				new ButtonOptions(FoundationButtonColor.ALERT), 
+				new ButtonOptions(FoundationButtonColor.ALERT), 
+				new ButtonOptions(FoundationButtonColor.ALERT));
 		add(new ButtonGroupPanel("advanced", new ButtonGroupOptions(FoundationButtonRadius.ROUND), btnOptions) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			protected WebMarkupContainer createButton(int idx, String id,
-					IModel<FoundationButtonOptions> optionsModel) {
+					IModel<ButtonOptions> optionsModel) {
 				return new FoundationLink<String>(id, Model.of(String.format("Button %d", idx+1)), optionsModel.getObject()) {
 
 					private static final long serialVersionUID = 1L;

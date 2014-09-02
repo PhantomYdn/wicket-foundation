@@ -21,31 +21,31 @@ public class FoundationAjaxSubmitLinkTest {
 
 	@Test
 	public void testAdvancedSize() {
-		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new FoundationButtonOptions(FoundationButtonSize.TINY)), 
+		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new ButtonOptions(FoundationButtonSize.TINY)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonSize.TINY.name())));
 	}
 
 	@Test
 	public void testAdvancedColor() {
-		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new FoundationButtonOptions(FoundationButtonColor.SUCCESS)), 
+		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new ButtonOptions(FoundationButtonColor.SUCCESS)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonColor.SUCCESS.name())));
 	}
 
 	@Test
 	public void testAdvancedRadius() {
-		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new FoundationButtonOptions(FoundationButtonRadius.RADIUS)), 
+		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new ButtonOptions(FoundationButtonRadius.RADIUS)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonRadius.RADIUS.name())));
 	}
 
 	@Test
 	public void testAdvancedState() {
-		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new FoundationButtonOptions(FoundationButtonState.DISABLED)), 
+		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new ButtonOptions(FoundationButtonState.DISABLED)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonState.DISABLED.name())));
 	}
 
 	@Test
 	public void testAdvancedExpansion() {
-		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new FoundationButtonOptions(FoundationButtonExpansion.EXPAND)), 
+		testButton(new WicketTester(), new FoundationAjaxSubmitLink("btn", new ButtonOptions(FoundationButtonExpansion.EXPAND)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonExpansion.EXPAND.name())));
 	}
 	

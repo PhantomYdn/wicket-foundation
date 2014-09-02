@@ -13,17 +13,17 @@ public class FoundationBookmarkablePageLink<T> extends BookmarkablePageLink<T> {
 
 	private static final long serialVersionUID = 1L;
 	
-	private IModel<FoundationButtonOptions> optionsModel;
+	private IModel<ButtonOptions> optionsModel;
 
 	public <C extends Page> FoundationBookmarkablePageLink(String id, Class<C> pageClass) {
-		this(id, pageClass, new FoundationButtonOptions());
+		this(id, pageClass, new ButtonOptions());
 	}
 	
-	public <C extends Page> FoundationBookmarkablePageLink(String id, Class<C> pageClass, FoundationButtonOptions options) {
+	public <C extends Page> FoundationBookmarkablePageLink(String id, Class<C> pageClass, ButtonOptions options) {
 		this(id, pageClass, Model.of(options));
 	}
 
-	public <C extends Page> FoundationBookmarkablePageLink(String id, Class<C> pageClass, IModel<FoundationButtonOptions> optionsModel) {
+	public <C extends Page> FoundationBookmarkablePageLink(String id, Class<C> pageClass, IModel<ButtonOptions> optionsModel) {
 		super(id, pageClass);
 		Args.notNull(optionsModel, "optionsModel");
 		this.optionsModel = optionsModel;
@@ -31,12 +31,12 @@ public class FoundationBookmarkablePageLink<T> extends BookmarkablePageLink<T> {
 	}
 	
 	public <C extends Page> FoundationBookmarkablePageLink(String id, Class<C> pageClass,
-			PageParameters parameters, FoundationButtonOptions options) {
+			PageParameters parameters, ButtonOptions options) {
 		this(id, pageClass, parameters, Model.of(options));
 	}
 
 	public <C extends Page> FoundationBookmarkablePageLink(String id, Class<C> pageClass,
-			PageParameters parameters, IModel<FoundationButtonOptions> optionsModel) {
+			PageParameters parameters, IModel<ButtonOptions> optionsModel) {
 		super(id, pageClass, parameters);
 		Args.notNull(optionsModel, "optionsModel");
 		this.optionsModel = optionsModel;

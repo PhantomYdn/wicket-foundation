@@ -2,7 +2,7 @@ package com.iluwatar.foundation.button;
 
 import java.io.Serializable;
 
-public class FoundationButtonOptions implements Serializable {
+public class ButtonOptions implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -12,30 +12,30 @@ public class FoundationButtonOptions implements Serializable {
 	private FoundationButtonState state;
 	private FoundationButtonExpansion expansion;
 	
-	public FoundationButtonOptions() {
+	public ButtonOptions() {
 	}
 	
-	public FoundationButtonOptions(FoundationButtonSize size) {
+	public ButtonOptions(FoundationButtonSize size) {
 		this.size = size;
 	}
 
-	public FoundationButtonOptions(FoundationButtonColor color) {
+	public ButtonOptions(FoundationButtonColor color) {
 		this.color = color;
 	}
 
-	public FoundationButtonOptions(FoundationButtonRadius radius) {
+	public ButtonOptions(FoundationButtonRadius radius) {
 		this.radius = radius;
 	}
 
-	public FoundationButtonOptions(FoundationButtonState state) {
+	public ButtonOptions(FoundationButtonState state) {
 		this.state = state;
 	}
 
-	public FoundationButtonOptions(FoundationButtonExpansion expansion) {
+	public ButtonOptions(FoundationButtonExpansion expansion) {
 		this.expansion = expansion;
 	}
 	
-	public FoundationButtonOptions(FoundationButtonOptions options) {
+	public ButtonOptions(ButtonOptions options) {
 		this.size = options.getFoundationButtonSize();
 		this.color = options.getFoundationButtonColor();
 		this.radius = options.getFoundationButtonRadius();
@@ -47,7 +47,7 @@ public class FoundationButtonOptions implements Serializable {
 		return size;
 	}
 
-	public FoundationButtonOptions setFoundationButtonSize(FoundationButtonSize foundationButtonSize) {
+	public ButtonOptions setFoundationButtonSize(FoundationButtonSize foundationButtonSize) {
 		this.size = foundationButtonSize;
 		return this;
 	}
@@ -56,7 +56,7 @@ public class FoundationButtonOptions implements Serializable {
 		return color;
 	}
 
-	public FoundationButtonOptions setFoundationButtonColor(FoundationButtonColor foundationButtonColor) {
+	public ButtonOptions setFoundationButtonColor(FoundationButtonColor foundationButtonColor) {
 		this.color = foundationButtonColor;
 		return this;
 	}
@@ -65,7 +65,7 @@ public class FoundationButtonOptions implements Serializable {
 		return radius;
 	}
 
-	public FoundationButtonOptions setFoundationButtonRadius(FoundationButtonRadius foundationButtonRadius) {
+	public ButtonOptions setFoundationButtonRadius(FoundationButtonRadius foundationButtonRadius) {
 		this.radius = foundationButtonRadius;
 		return this;
 	}
@@ -74,7 +74,7 @@ public class FoundationButtonOptions implements Serializable {
 		return state;
 	}
 
-	public FoundationButtonOptions setFoundationButtonState(FoundationButtonState foundationButtonState) {
+	public ButtonOptions setFoundationButtonState(FoundationButtonState foundationButtonState) {
 		this.state = foundationButtonState;
 		return this;
 	}
@@ -83,12 +83,12 @@ public class FoundationButtonOptions implements Serializable {
 		return expansion;
 	}
 
-	public FoundationButtonOptions setFoundationButtonExpansion(FoundationButtonExpansion foundationButtonExpansion) {
+	public ButtonOptions setFoundationButtonExpansion(FoundationButtonExpansion foundationButtonExpansion) {
 		this.expansion = foundationButtonExpansion;
 		return this;
 	}
 	
-	public FoundationButtonOptions reset() {
+	public ButtonOptions reset() {
 		size = null;
 		color = null;
 		radius = null;

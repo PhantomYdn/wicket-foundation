@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import com.iluwatar.foundation.button.FoundationButtonClassNames;
 import com.iluwatar.foundation.button.FoundationButtonColor;
-import com.iluwatar.foundation.button.FoundationButtonOptions;
+import com.iluwatar.foundation.button.ButtonOptions;
 import com.iluwatar.foundation.button.FoundationButtonRadius;
 import com.iluwatar.foundation.button.FoundationLink;
 import com.iluwatar.foundation.util.StringUtil;
@@ -52,18 +52,18 @@ public class ButtonGroupPanelTest {
 	}
 	
 	private TestButtonGroupPanel createBasicButtonGroup() {
-		ArrayList<FoundationButtonOptions> btnOptions = new ArrayList<>();
-		btnOptions.add(new FoundationButtonOptions());
+		ArrayList<ButtonOptions> btnOptions = new ArrayList<>();
+		btnOptions.add(new ButtonOptions());
 		ButtonGroupOptions groupOptions = new ButtonGroupOptions();
 		TestButtonGroupPanel group = new TestButtonGroupPanel("buttons", groupOptions, btnOptions);
 		return group;
 	}
 
 	private TestButtonGroupPanel createAdvancedButtonGroup() {
-		ArrayList<FoundationButtonOptions> btnOptions = new ArrayList<>();
-		btnOptions.add(new FoundationButtonOptions(FoundationButtonColor.ALERT));
-		btnOptions.add(new FoundationButtonOptions(FoundationButtonColor.SECONDARY));
-		btnOptions.add(new FoundationButtonOptions(FoundationButtonColor.SUCCESS));
+		ArrayList<ButtonOptions> btnOptions = new ArrayList<>();
+		btnOptions.add(new ButtonOptions(FoundationButtonColor.ALERT));
+		btnOptions.add(new ButtonOptions(FoundationButtonColor.SECONDARY));
+		btnOptions.add(new ButtonOptions(FoundationButtonColor.SUCCESS));
 		ButtonGroupOptions groupOptions = new ButtonGroupOptions(FoundationButtonRadius.ROUND);
 		TestButtonGroupPanel group = new TestButtonGroupPanel("buttons", groupOptions, btnOptions);
 		return group;
@@ -74,12 +74,12 @@ public class ButtonGroupPanelTest {
 		private static final long serialVersionUID = 1L;
 		
 		public TestButtonGroupPanel(String id, ButtonGroupOptions groupOptions,
-				List<FoundationButtonOptions> btnOptions) {
+				List<ButtonOptions> btnOptions) {
 			super(id, groupOptions, btnOptions);
 		}
 
 		@Override
-		protected WebMarkupContainer createButton(int idx, String id, IModel<FoundationButtonOptions> optionsModel) {
+		protected WebMarkupContainer createButton(int idx, String id, IModel<ButtonOptions> optionsModel) {
 			return new FoundationLink<Void>(id, optionsModel.getObject()) {
 
 				private static final long serialVersionUID = 1L;

@@ -24,30 +24,30 @@ public class FoundationBookmarkablePageLinkTest {
 	@Test
 	public void testAdvancedSize() {
 		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, 
-				new FoundationButtonOptions(FoundationButtonSize.TINY)), Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonSize.TINY.name())));
+				new ButtonOptions(FoundationButtonSize.TINY)), Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonSize.TINY.name())));
 	}
 
 	@Test
 	public void testAdvancedColor() {
-		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, new FoundationButtonOptions(FoundationButtonColor.SUCCESS)), 
+		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, new ButtonOptions(FoundationButtonColor.SUCCESS)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonColor.SUCCESS.name())));
 	}
 
 	@Test
 	public void testAdvancedRadius() {
-		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, new FoundationButtonOptions(FoundationButtonRadius.RADIUS)), 
+		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, new ButtonOptions(FoundationButtonRadius.RADIUS)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonRadius.RADIUS.name())));
 	}
 
 	@Test
 	public void testAdvancedState() {
-		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, new FoundationButtonOptions(FoundationButtonState.DISABLED)), 
+		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, new ButtonOptions(FoundationButtonState.DISABLED)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonState.DISABLED.name())));
 	}
 
 	@Test
 	public void testAdvancedExpansion() {
-		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, new FoundationButtonOptions(FoundationButtonExpansion.EXPAND)), 
+		testButton(new WicketTester(), new FoundationTestBookmarkablePageLink("btn", FoundationButtonTestPage.class, new ButtonOptions(FoundationButtonExpansion.EXPAND)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonExpansion.EXPAND.name())));
 	}
 	
@@ -70,7 +70,7 @@ public class FoundationBookmarkablePageLinkTest {
 		}
 		
 		public <C extends Page> FoundationTestBookmarkablePageLink(String id,
-				Class<C> pageClass, FoundationButtonOptions options) {
+				Class<C> pageClass, ButtonOptions options) {
 			super(id, pageClass, options);
 		}
 	}

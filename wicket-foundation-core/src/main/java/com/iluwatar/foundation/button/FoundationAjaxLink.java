@@ -11,13 +11,13 @@ public abstract class FoundationAjaxLink<T> extends AjaxLink<T> {
 
 	private static final long serialVersionUID = 1L;
 
-	private IModel<FoundationButtonOptions> optionsModel;
+	private IModel<ButtonOptions> optionsModel;
 	
 	public FoundationAjaxLink(String id) {
-		this(id, new FoundationButtonOptions());
+		this(id, new ButtonOptions());
 	}
 
-	public FoundationAjaxLink(String id, FoundationButtonOptions options) {
+	public FoundationAjaxLink(String id, ButtonOptions options) {
 		super(id);
 		Args.notNull(options, "options");
 		optionsModel = Model.of(options);
@@ -25,14 +25,14 @@ public abstract class FoundationAjaxLink<T> extends AjaxLink<T> {
 	}
 	
 	public FoundationAjaxLink(String id, IModel<T> model) {
-		this(id, model, new FoundationButtonOptions());
+		this(id, model, new ButtonOptions());
 	}
 
-	public FoundationAjaxLink(String id, IModel<T> model, FoundationButtonOptions options) {
+	public FoundationAjaxLink(String id, IModel<T> model, ButtonOptions options) {
 		this(id, model, Model.of(options));
 	}
 
-	public FoundationAjaxLink(String id, IModel<T> model, IModel<FoundationButtonOptions> optionsModel) {
+	public FoundationAjaxLink(String id, IModel<T> model, IModel<ButtonOptions> optionsModel) {
 		super(id, model);
 		Args.notNull(optionsModel, "optionsModel");
 		this.optionsModel = optionsModel;

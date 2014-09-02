@@ -12,9 +12,9 @@ public class FoundationButtonBehavior extends FoundationBaseBehavior {
 
 	private static final long serialVersionUID = 1L;
 	
-	private IModel<FoundationButtonOptions> optionsModel;
+	private IModel<ButtonOptions> optionsModel;
 
-	public FoundationButtonBehavior(IModel<FoundationButtonOptions> optionsModel) {
+	public FoundationButtonBehavior(IModel<ButtonOptions> optionsModel) {
 		this.optionsModel = optionsModel;
 	}
 	
@@ -22,7 +22,7 @@ public class FoundationButtonBehavior extends FoundationBaseBehavior {
 	public void onComponentTag(Component component, ComponentTag tag) {
 
 		Attribute.setClass(tag, FoundationButtonClassNames.BUTTON);
-		FoundationButtonOptions options = optionsModel.getObject();
+		ButtonOptions options = optionsModel.getObject();
 		if (options.getFoundationButtonSize() != null) {
 			Attribute.addClass(tag, StringUtil.EnumNameToCssClassName(options
 					.getFoundationButtonSize().name()));

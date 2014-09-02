@@ -10,7 +10,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.util.ListModel;
 
-import com.iluwatar.foundation.button.FoundationButtonOptions;
+import com.iluwatar.foundation.button.ButtonOptions;
 import com.iluwatar.foundation.component.FoundationBasePanel;
 import com.iluwatar.foundation.util.Attribute;
 import com.iluwatar.foundation.util.StringUtil;
@@ -19,15 +19,15 @@ public abstract class ButtonGroupPanel extends FoundationBasePanel {
 
 	private static final long serialVersionUID = 1L;
 
-	public ButtonGroupPanel(String id, ButtonGroupOptions groupOptions, List<FoundationButtonOptions> btnOptions) {
-		this(id, Model.of(groupOptions), new ListModel<FoundationButtonOptions>(btnOptions));
+	public ButtonGroupPanel(String id, ButtonGroupOptions groupOptions, List<ButtonOptions> btnOptions) {
+		this(id, Model.of(groupOptions), new ListModel<ButtonOptions>(btnOptions));
 	}
 	
-	public ButtonGroupPanel(String id, IModel<ButtonGroupOptions> groupOptionsModel, IModel<List<FoundationButtonOptions>> btnOptionsModel) {
+	public ButtonGroupPanel(String id, IModel<ButtonGroupOptions> groupOptionsModel, IModel<List<ButtonOptions>> btnOptionsModel) {
 		super(id);
 		WebMarkupContainer container = createContainer("group", groupOptionsModel);
 		add(container);
-		ListView<FoundationButtonOptions> lv = createRepeater("item", btnOptionsModel);
+		ListView<ButtonOptions> lv = createRepeater("item", btnOptionsModel);
 		container.add(lv);
 	}
 	
@@ -35,20 +35,20 @@ public abstract class ButtonGroupPanel extends FoundationBasePanel {
 		return new ButtonGroupContainer(id, groupOptions);
 	}
 	
-	protected ListView<FoundationButtonOptions> createRepeater(String id, IModel<List<FoundationButtonOptions>> btnOptionsModel) {
-		return new ListView<FoundationButtonOptions>(id, btnOptionsModel) {
+	protected ListView<ButtonOptions> createRepeater(String id, IModel<List<ButtonOptions>> btnOptionsModel) {
+		return new ListView<ButtonOptions>(id, btnOptionsModel) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			protected void populateItem(ListItem<FoundationButtonOptions> item) {
+			protected void populateItem(ListItem<ButtonOptions> item) {
 				WebMarkupContainer btn = ButtonGroupPanel.this.createButton(item.getIndex(), "btn", item.getModel());
 				item.add(btn);
 			}
 		};
 	}
 	
-	protected abstract WebMarkupContainer createButton(int idx, String id, IModel<FoundationButtonOptions> optionsModel);
+	protected abstract WebMarkupContainer createButton(int idx, String id, IModel<ButtonOptions> optionsModel);
 
 	private static class ButtonGroupContainer extends WebMarkupContainer {
 

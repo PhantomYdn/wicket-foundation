@@ -12,38 +12,38 @@ public class FoundationSubmitLink extends SubmitLink {
 
 	private static final long serialVersionUID = 1L;
 
-	private IModel<FoundationButtonOptions> optionsModel;
+	private IModel<ButtonOptions> optionsModel;
 
 	public FoundationSubmitLink(String id) {
-		this(id, new FoundationButtonOptions());
+		this(id, new ButtonOptions());
 	}
 	
-	public FoundationSubmitLink(String id, FoundationButtonOptions options) {
+	public FoundationSubmitLink(String id, ButtonOptions options) {
 		super(id);
 		Args.notNull(options, "options");
 		optionsModel = Model.of(options);
 		add(new FoundationButtonBehavior(optionsModel));
 	}
 	
-	public FoundationSubmitLink(String id, Form<?> form, FoundationButtonOptions options) {
+	public FoundationSubmitLink(String id, Form<?> form, ButtonOptions options) {
 		super(id, form);
 		Args.notNull(options, "options");
 		optionsModel = Model.of(options);
 		add(new FoundationButtonBehavior(optionsModel));
 	}
 	
-	public FoundationSubmitLink(String id, IModel<?> model, FoundationButtonOptions options) {
+	public FoundationSubmitLink(String id, IModel<?> model, ButtonOptions options) {
 		super(id, model);
 		Args.notNull(options, "options");
 		optionsModel = Model.of(options);
 		add(new FoundationButtonBehavior(optionsModel));
 	}
 	
-	public FoundationSubmitLink(String id, IModel<?> model, Form<?> form, FoundationButtonOptions options) {
+	public FoundationSubmitLink(String id, IModel<?> model, Form<?> form, ButtonOptions options) {
 		this(id, model, form, Model.of(options));
 	}
 
-	public FoundationSubmitLink(String id, IModel<?> model, Form<?> form, IModel<FoundationButtonOptions> optionsModel) {
+	public FoundationSubmitLink(String id, IModel<?> model, Form<?> form, IModel<ButtonOptions> optionsModel) {
 		super(id, model, form);
 		Args.notNull(optionsModel, "optionsModel");
 		this.optionsModel = optionsModel;

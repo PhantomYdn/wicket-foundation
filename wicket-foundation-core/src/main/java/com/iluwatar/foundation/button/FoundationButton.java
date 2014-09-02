@@ -11,13 +11,13 @@ public class FoundationButton extends Button {
 
 	private static final long serialVersionUID = 1L;
 	
-	private IModel<FoundationButtonOptions> optionsModel;
+	private IModel<ButtonOptions> optionsModel;
 
 	public FoundationButton(String id) {
-		this(id, new FoundationButtonOptions());
+		this(id, new ButtonOptions());
 	}
 
-	public FoundationButton(String id, FoundationButtonOptions options) {
+	public FoundationButton(String id, ButtonOptions options) {
 		super(id);
 		Args.notNull(options, "options");
 		optionsModel = Model.of(options);
@@ -26,15 +26,15 @@ public class FoundationButton extends Button {
 	
 	public FoundationButton(String id, IModel<String> model) {
 		super(id, model);
-		optionsModel = Model.of(new FoundationButtonOptions());
+		optionsModel = Model.of(new ButtonOptions());
 		add(new FoundationButtonBehavior(optionsModel));
 	}
 
-	public FoundationButton(String id, IModel<String> model, FoundationButtonOptions options) {
+	public FoundationButton(String id, IModel<String> model, ButtonOptions options) {
 		this(id, model, Model.of(options));
 	}
 	
-	public FoundationButton(String id, IModel<String> model, IModel<FoundationButtonOptions> optionsModel) {
+	public FoundationButton(String id, IModel<String> model, IModel<ButtonOptions> optionsModel) {
 		super(id, model);
 		Args.notNull(optionsModel, "optionsModel");
 		this.optionsModel = optionsModel;
