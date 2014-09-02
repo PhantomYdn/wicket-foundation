@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.Model;
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
@@ -16,10 +18,20 @@ import com.iluwatar.foundation.util.StringUtil;
 public class FoundationAjaxLinkTest {
 
 	@Test
-	public void testBasic() {
+	public void testBasic1() {
 		testButton(new WicketTester(), new FoundationTestAjaxLink("btn"), new ArrayList<String>());
 	}
 
+	@Test
+	public void testBasic2() {
+		testButton(new WicketTester(), new FoundationTestAjaxLink("btn", Model.of("foo")), new ArrayList<String>());
+	}
+
+	@Test
+	public void testBasic3() {
+		testButton(new WicketTester(), new FoundationTestAjaxLink("btn", Model.of("foo"), new ButtonOptions()), new ArrayList<String>());
+	}
+	
 	@Test
 	public void testAdvancedSize() {
 		testButton(new WicketTester(), new FoundationTestAjaxLink("btn", new ButtonOptions(FoundationButtonSize.TINY)), 
@@ -59,7 +71,7 @@ public class FoundationAjaxLinkTest {
 		}
 	}
 	
-	private static class FoundationTestAjaxLink extends FoundationAjaxLink<Void> {
+	private static class FoundationTestAjaxLink extends FoundationAjaxLink<String> {
 
 		private static final long serialVersionUID = 1L;
 
@@ -71,6 +83,14 @@ public class FoundationAjaxLinkTest {
 			super(id, options);
 		}
 
+		public FoundationTestAjaxLink(String id, IModel<String> model) {
+			super(id, model);
+		}
+
+		public FoundationTestAjaxLink(String id, IModel<String> model, ButtonOptions options) {
+			super(id, model, options);
+		}
+		
 		@Override
 		public void onClick(AjaxRequestTarget target) {
 			// NOP
