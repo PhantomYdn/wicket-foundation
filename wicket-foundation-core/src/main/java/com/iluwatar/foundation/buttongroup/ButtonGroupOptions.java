@@ -1,9 +1,11 @@
 package com.iluwatar.foundation.buttongroup;
 
+import java.io.Serializable;
+
 import com.iluwatar.foundation.button.FoundationButtonColor;
 import com.iluwatar.foundation.button.FoundationButtonRadius;
 
-public class ButtonGroupOptions {
+public class ButtonGroupOptions implements Serializable {
 
 	private FoundationButtonRadius radius;
 	private FoundationButtonColor color;
