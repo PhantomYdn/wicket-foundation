@@ -13,6 +13,7 @@ import org.apache.wicket.model.util.ListModel;
 import com.iluwatar.foundation.button.FoundationButtonOptions;
 import com.iluwatar.foundation.component.FoundationBasePanel;
 import com.iluwatar.foundation.util.Attribute;
+import com.iluwatar.foundation.util.StringUtil;
 
 public abstract class ButtonGroupPanel extends FoundationBasePanel {
 
@@ -60,6 +61,16 @@ public abstract class ButtonGroupPanel extends FoundationBasePanel {
 		@Override
 		protected void onComponentTag(ComponentTag tag) {
 			Attribute.setClass(tag, ButtonGroupClassNames.BUTTON_GROUP);
+			ButtonGroupOptions options = (ButtonGroupOptions) getDefaultModelObject();
+			if (options.getRadius() != null) {
+				Attribute.addClass(tag, StringUtil.EnumNameToCssClassName(options.getRadius().name()));
+			}
+			if (options.getColor() != null) {
+				Attribute.addClass(tag, StringUtil.EnumNameToCssClassName(options.getColor().name()));
+			}
+			if (options.getStacking() != null) {
+				Attribute.addClass(tag, StringUtil.EnumNameToCssClassName(options.getStacking().name()));
+			}
 			super.onComponentTag(tag);
 		}
 	}

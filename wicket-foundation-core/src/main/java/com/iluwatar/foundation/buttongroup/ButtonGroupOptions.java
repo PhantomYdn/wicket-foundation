@@ -13,23 +13,47 @@ public class ButtonGroupOptions implements Serializable {
 	private FoundationButtonColor color;
 	private ButtonGroupStacking stacking;
 	
+	public ButtonGroupOptions() {
+	}
+
+	public ButtonGroupOptions(FoundationButtonRadius radius) {
+		this.radius = radius;
+	}
+	
+	public ButtonGroupOptions(FoundationButtonColor color) {
+		this.color = color;
+	}
+	
+	public ButtonGroupOptions(ButtonGroupStacking stacking) {
+		this.stacking = stacking;
+	}
+	
+	public ButtonGroupOptions(ButtonGroupOptions other) {
+		this.radius = other.radius;
+		this.color = other.color;
+		this.stacking = other.stacking;
+	}
+	
 	public FoundationButtonRadius getRadius() {
 		return radius;
 	}
-	public void setRadius(FoundationButtonRadius radius) {
+	public ButtonGroupOptions setRadius(FoundationButtonRadius radius) {
 		this.radius = radius;
+		return this;
 	}
 	public FoundationButtonColor getColor() {
 		return color;
 	}
-	public void setColor(FoundationButtonColor color) {
+	public ButtonGroupOptions setColor(FoundationButtonColor color) {
 		this.color = color;
+		return this;
 	}
 	public ButtonGroupStacking getStacking() {
 		return stacking;
 	}
-	public void setStacking(ButtonGroupStacking stacking) {
+	public ButtonGroupOptions setStacking(ButtonGroupStacking stacking) {
 		this.stacking = stacking;
+		return this;
 	}
 	
 }
