@@ -5,17 +5,14 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.model.IModel;
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
 
+import com.iluwatar.foundation.button.ButtonOptions;
 import com.iluwatar.foundation.button.FoundationButtonClassNames;
 import com.iluwatar.foundation.button.FoundationButtonColor;
-import com.iluwatar.foundation.button.ButtonOptions;
 import com.iluwatar.foundation.button.FoundationButtonRadius;
-import com.iluwatar.foundation.button.FoundationLink;
 import com.iluwatar.foundation.util.StringUtil;
 
 public class ButtonGroupPanelTest {
@@ -23,7 +20,7 @@ public class ButtonGroupPanelTest {
 	@Test
 	public void renderBasicTest() { 
 		WicketTester tester = new WicketTester();
-		tester.startComponentInPage(createBasicButtonGroup());
+		tester.startComponentInPage(createBasicButtonGroup("buttons"));
 		TagTester tag = tester.getTagByWicketId("buttons");
 		tag.getAttributeContains("class", ButtonGroupClassNames.BUTTON_GROUP);
 	}
@@ -31,8 +28,7 @@ public class ButtonGroupPanelTest {
 	@Test
 	public void renderAdvancedTest() { 
 		WicketTester tester = new WicketTester();
-		tester.startComponentInPage(createAdvancedButtonGroup());
-		tester.dumpPage();
+		tester.startComponentInPage(createAdvancedButtonGroup("buttons"));
 		TagTester group = tester.getTagByWicketId("group");
 		assertTrue(group.getAttributeContains("class", ButtonGroupClassNames.BUTTON_GROUP));
 		assertTrue(group.getAttributeContains("class", StringUtil.EnumNameToCssClassName(FoundationButtonRadius.ROUND.name())));
@@ -50,46 +46,31 @@ public class ButtonGroupPanelTest {
 		assertTrue(btnList.get(2).getAttributeContains("class", 
 				StringUtil.EnumNameToCssClassName(FoundationButtonColor.SUCCESS.name())));
 	}
+
+	@Test
+	public void renderButtonBarTest() { 
+		WicketTester tester = new WicketTester();
+		tester.startPage(ButtonBarTestPage.class);
+		tester.dumpPage();
+		TagTester tag = tester.getTagByWicketId("border");
+		tag.getAttributeContains("class", ButtonGroupClassNames.BUTTON_BAR);
+	}
 	
-	private TestButtonGroupPanel createBasicButtonGroup() {
+	private TestButtonGroupPanel createBasicButtonGroup(String id) {
 		ArrayList<ButtonOptions> btnOptions = new ArrayList<>();
 		btnOptions.add(new ButtonOptions());
 		ButtonGroupOptions groupOptions = new ButtonGroupOptions();
-		TestButtonGroupPanel group = new TestButtonGroupPanel("buttons", groupOptions, btnOptions);
+		TestButtonGroupPanel group = new TestButtonGroupPanel(id, groupOptions, btnOptions);
 		return group;
 	}
 
-	private TestButtonGroupPanel createAdvancedButtonGroup() {
+	private TestButtonGroupPanel createAdvancedButtonGroup(String id) {
 		ArrayList<ButtonOptions> btnOptions = new ArrayList<>();
 		btnOptions.add(new ButtonOptions(FoundationButtonColor.ALERT));
 		btnOptions.add(new ButtonOptions(FoundationButtonColor.SECONDARY));
 		btnOptions.add(new ButtonOptions(FoundationButtonColor.SUCCESS));
 		ButtonGroupOptions groupOptions = new ButtonGroupOptions(FoundationButtonRadius.ROUND);
-		TestButtonGroupPanel group = new TestButtonGroupPanel("buttons", groupOptions, btnOptions);
+		TestButtonGroupPanel group = new TestButtonGroupPanel(id, groupOptions, btnOptions);
 		return group;
-	}
-	
-	private static class TestButtonGroupPanel extends ButtonGroupPanel {
-
-		private static final long serialVersionUID = 1L;
-		
-		public TestButtonGroupPanel(String id, ButtonGroupOptions groupOptions,
-				List<ButtonOptions> btnOptions) {
-			super(id, groupOptions, btnOptions);
-		}
-
-		@Override
-		protected WebMarkupContainer createButton(int idx, String id, IModel<ButtonOptions> optionsModel) {
-			return new FoundationLink<Void>(id, optionsModel.getObject()) {
-
-				private static final long serialVersionUID = 1L;
-
-				@Override
-				public void onClick() {
-					setResponsePage(ButtonGroupTestPage.class);
-				}
-				
-			};
-		}
 	}
 }
