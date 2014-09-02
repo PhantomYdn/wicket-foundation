@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
@@ -19,6 +20,15 @@ public class FoundationSubmitLinkTest {
 		testButton(new WicketTester(), new FoundationSubmitLink("btn"), new ArrayList<String>());
 	}
 
+	@Test
+	public void testConstructors() {
+		WicketTester tester = new WicketTester();
+		PageParameters params = new PageParameters();
+		params.add("buttonType", "FoundationSubmitLink");
+		FoundationButtonConstructorTestPage page = new FoundationButtonConstructorTestPage(params);
+		tester.startPage(page);
+	}
+	
 	@Test
 	public void testAdvancedSize() {
 		testButton(new WicketTester(), new FoundationSubmitLink("btn", new ButtonOptions(FoundationButtonSize.TINY)), 

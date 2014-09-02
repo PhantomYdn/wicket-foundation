@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Test;
@@ -22,7 +23,10 @@ public class FoundationAjaxButtonTest {
 	@Test
 	public void testConstructors() {
 		WicketTester tester = new WicketTester();
-		tester.startPage(FoundationButtonConstructorTestPage.class);
+		PageParameters params = new PageParameters();
+		params.add("buttonType", "FoundationAjaxButton");
+		FoundationButtonConstructorTestPage page = new FoundationButtonConstructorTestPage(params);
+		tester.startPage(page);
 	}
 	
 	@Test
