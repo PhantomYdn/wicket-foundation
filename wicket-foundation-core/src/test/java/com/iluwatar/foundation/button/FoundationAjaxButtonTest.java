@@ -20,6 +20,12 @@ public class FoundationAjaxButtonTest {
 	}
 
 	@Test
+	public void testConstructors() {
+		WicketTester tester = new WicketTester();
+		tester.startPage(FoundationButtonConstructorTestPage.class);
+	}
+	
+	@Test
 	public void testAdvancedSize() {
 		testButton(new WicketTester(), new FoundationAjaxButton("btn", new ButtonOptions(FoundationButtonSize.TINY)), 
 				Arrays.asList(StringUtil.EnumNameToCssClassName(FoundationButtonSize.TINY.name())));
