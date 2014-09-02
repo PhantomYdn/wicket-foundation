@@ -7,6 +7,8 @@ import com.iluwatar.foundation.button.FoundationButtonRadius;
 
 public class ButtonGroupOptions implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private FoundationButtonRadius radius;
 	private FoundationButtonColor color;
 	private ButtonGroupStacking stacking;
