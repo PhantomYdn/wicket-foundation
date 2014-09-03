@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.util.lang.Args;
+import org.apache.wicket.util.string.StringValue;
 
 import com.google.common.base.Splitter;
 
@@ -89,5 +90,43 @@ public class Attribute {
 		String[] existing = value.split(" ");
 		return Arrays.asList(existing).contains(className);
 	}
+
+	/**
+	 * Adds attribute without value
+	 * @param tag
+	 * @param attribute
+	 * @return
+	 */
+	public static ComponentTag addAttribute(ComponentTag tag, String attribute) {
+		Args.notNull(tag, "tag");
+		Args.notNull(attribute, "attribute");
+		String v = null;
+		tag.put(attribute, StringValue.valueOf(v));
+		return tag;
+	}
 	
+	/**
+	 * Removes attribute
+	 * @param tag
+	 * @param attribute
+	 * @return
+	 */
+	public static ComponentTag removeAttribute(ComponentTag tag, String attribute) {
+		Args.notNull(tag, "tag");
+		Args.notNull(attribute, "attribute");
+		tag.remove(attribute);
+		return tag;
+	}
+	
+	/**
+	 * Test if tag contains attribute
+	 * @param tag
+	 * @param attribute
+	 * @return
+	 */
+	public static boolean hasAttribute(ComponentTag tag, String attribute) {
+		Args.notNull(tag, "tag");
+		Args.notNull(attribute, "attribute");
+		return tag.toString().contains(attribute);
+	}
 }

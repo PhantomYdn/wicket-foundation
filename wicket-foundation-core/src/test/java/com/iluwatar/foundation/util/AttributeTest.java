@@ -1,6 +1,8 @@
 package com.iluwatar.foundation.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.parser.XmlTag;
@@ -66,4 +68,12 @@ public class AttributeTest {
         assertEquals("", tag.getAttribute("class"));
 	}
 	
+	@Test
+	public void testAddRemoveAttribute() {
+        final ComponentTag tag = new ComponentTag("div", XmlTag.TagType.OPEN_CLOSE);
+        Attribute.addAttribute(tag, "data-foobar");
+        assertTrue(Attribute.hasAttribute(tag, "data-foobar"));
+        Attribute.removeAttribute(tag, "data-foobar");
+        assertFalse(Attribute.hasAttribute(tag, "data-foobar"));
+	}
 }

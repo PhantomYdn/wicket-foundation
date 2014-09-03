@@ -24,13 +24,13 @@
 
                     <h4>HTML</h4>
 
-<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-alert</span> <span class="attribute">class</span>=<span class="value">&quot;alert-box&quot;</span>&gt;</span>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">wicket:id</span>=<span class="value">&quot;basic&quot;</span>&gt;</span><span class="tag">&lt;<span class="title">/div</span>&gt;</span>
 </div></code>
 </pre>
 
                     <h4>Java</h4>
 
-<pre><code class="language-html"><div class="code-container">
+<pre><code class="language-html"><div class="code-container">add(new FoundationAlert(&quot;basic&quot;, Model.of(&quot;This is standard alert.&quot;)));
 </div></code>
 </pre>
 
@@ -38,10 +38,7 @@
                 <div>
                     <h4>Rendered HTML</h4>
 
-                    <div data-alert class="alert-box">
-                        This is a standard alert. <a href="#"
-                            class="close">&times;</a>
-                    </div>
+                    <div wicket:id="basic"></div>
 
                     <p>
                 </div>
